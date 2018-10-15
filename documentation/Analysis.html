@@ -1,31 +1,37 @@
 <h2><b>Table of Contents</b></h2>
 <ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">1. Introduction</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">2. Object Classification</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#intro">1. Introduction</a></span></li>
 <ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">2.1 Entity Objects</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">2.2 Boundary Objects</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">2.3 Control Objects</span></li>
+	<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#PO">1.1 Project Overview</a></span></li>
+	<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#purpose">1.2 Purpose</a></span></li>
+	
+	
 </ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">3. Diagrams</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#oClassification">2. Object Classification</a></span></li>
 <ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">3.1 Boundary/Control/Entity Diagram</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">3.2 State Diagram</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#EntityObjects">2.1 Entity Objects</a></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#boundaryo">2.2 Boundary Objects</a></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#controlO">2.3 Control Objects</a></span></li>
+</ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#diagram">3. Diagrams</a></span></li>
 <ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">3.2.1 Party Controller Class</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">3.2.3 Song Controller Class</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">3.2.1 User Controller Class</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#BCEDiagram">3.1 Boundary/Control/Entity Diagram</a></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#">3.2 State Diagram</a></span></li>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#">3.2.1 Party Controller Class</a></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#">3.2.3 Song Controller Class</a></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#">3.2.1 User Controller Class</a></span></li>
 </ul>
 </ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">4. Versions</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#versions">4. Versions</a></span></li>
 </ul>
-<h2><b>1. Introduction</b></h2>
-<h2><b>1.1 Project overview</b></h2>
+<h2><a name="intro"><b>1. Introduction</b></a></h2>
+<h2><a name="PO"><b>1.1 Project overview</b></a></h2>
 <p><span style="font-weight: 400;">Laze is an application containing a live and dynamic GPS map overview of Wilfrid Laurier University. It allows users to pin points of interest, such as study spaces, restaurant lines, parking spots, etc - all of which will be visible to all other users of the application. These pins enable users to view indicated information such as the length of a line or the availability of a parking spot nearby. Users have the ability to support the validity of an active pin or flag to decrease its time before expiry. </span></p>
-<h2><b>1.2 Purpose</b></h2>
+<h2><a name="purpose"><b>1.2 Purpose</b></a></h2>
 <p><span style="font-weight: 400;">This document shows how the objects in our program interact with each other as well as each entity object&rsquo;s listed attributes. This document also serves as a framework for our development team to use when creating objects and classes. &nbsp;</span></p>
-<h2><b>2. Object Classification</b></h2>
-<h3><b>2.1 Entity Objects</b></h3>
+<h2><a name="oClassification"><b>2. Object Classification</b></a></h2>
+<h3><a name="EntityObjects"><b>2.1 Entity Objects</b></a></h3>
 <ul>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Administrator-A user from the Laze application, may suspend users, Delete pins and create permanent pins.</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Guest-A user of the Laze Application that may see the map and pins</span></li>
@@ -33,7 +39,7 @@
 <li style="font-weight: 400;"><span style="font-weight: 400;">Pins-An object used to describe and rate a certain area/location</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">User-A user from the Laze application</span></li>
 </ul>
-<h3><b>2.2 Boundary Objects</b></h3>
+<h3><a name="boundaryo"><b>2.2 Boundary Objects</b></a></h3>
 <ul>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Feed Post View-Where the user can go to update the feed</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Feed View-Where the user can go to see populated and unpopulated areas</span></li>
@@ -46,7 +52,7 @@
 <li style="font-weight: 400;"><span style="font-weight: 400;">Setting View-Where a Admin selects where they are on the map</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">User Login View-Where the user can login into their account</span></li>
 </ul>
-<h3><b>2.3 Control Objects</b></h3>
+<h3><a name= "controlO"><b>2.3 Control Objects</b></a></h3>
 <ul>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Admin Controller-Controls all matters related to admin data</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Map Controller-Controls all matters involving the overall map</span></li>
@@ -54,8 +60,8 @@
 <li style="font-weight: 400;"><span style="font-weight: 400;">Search Controller-Controls all matters related to searching for pins and location</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">User Controller-Controls all matters related to User Data</span></li>
 </ul>
-<h2><b>3. Diagram</b></h2>
-<h2><b>3.1 Boundary/Control/Entity Diagram</b></h2>
+<h2><a name= "diagram"><b>3. Diagrams</b></a></h2>
+<h2><a name= "BCEDiagram"><b>3.1 Boundary/Control/Entity Diagram</b></a></h2>
 <img src="https://raw.githubusercontent.com/lauriercp317/laze/master/documentation/Entity%20Diagram.png"><br>
 <p><b>3.2 User Control Event Loop</b></p><br>
 <img src="https://raw.githubusercontent.com/lauriercp317/laze/master/documentation/Flow%20Chart.PNG"><br>
@@ -63,7 +69,7 @@
 <img src="https://raw.githubusercontent.com/lauriercp317/laze/master/documentation/Pin%20Flow%20Chart.PNG"><br>
 <p><b>3.4 Feed Event Loop</b></p>
 <img src=""><br>
-<h2><b>4. Versions</b></h2>
+<h2><a name="versions"><b>4. Versions</b></a></h2>
 <h3>Version 1.0 - 2018/10/14</h3>
 <i>Created the document</i>
 <ul>
@@ -74,8 +80,8 @@
 	<li>Mansi Bhatia</li>
 </ul>
 <h3>Version 1.1 - 2018/10/15</h3>
-<i>Updated versions</i>
+<i>Updated versions </i>
 <ul>
 	<li>Binoli Joshi</li>
+	<li>Katie Milligan</li>
 </ul>
-
