@@ -25,6 +25,11 @@
   src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
 }
 
+@font-face {
+  font-family: Varela-Round;
+  src:url('../fonts/Varela_Round/VarelaRound-Regular.ttf');
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
@@ -36,7 +41,7 @@
 
 body, html {
 	height: 100%;
-  font-family: Poppins-Regular, sans-serif;
+  font-family: Varela-Round, sans-serif;
 
   background-image: url(../images/map_blur2.jpg);
   background-size: cover;
@@ -44,11 +49,12 @@ body, html {
 
 /*---------------------------------------------*/
 a {
-	font-family: Poppins-Regular;
+	font-family: Varela-Round;
 	font-size: 14px;
 	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
+	color: #fff;
+  margin: 0px;
+  text-align: left;
 	transition: all 0.4s;
 	-webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -61,7 +67,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #57b846;
+  color: #5F397F;
 }
 
 /*---------------------------------------------*/
@@ -70,10 +76,10 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: Poppins-Regular;
+	font-family: Varela-Round;
 	font-size: 14px;
 	line-height: 1.7;
-	color: #666666;
+	color: #fff;
 	margin: 0px;
 }
 
@@ -108,15 +114,15 @@ textarea:focus:-moz-placeholder { color:transparent; }
 textarea:focus::-moz-placeholder { color:transparent; }
 textarea:focus:-ms-input-placeholder { color:transparent; }
 
-input::-webkit-input-placeholder { color: #999999; }
-input:-moz-placeholder { color: #999999; }
-input::-moz-placeholder { color: #999999; }
-input:-ms-input-placeholder { color: #999999; }
+input::-webkit-input-placeholder { color: #fff; }
+input:-moz-placeholder { color: #fff; }
+input::-moz-placeholder { color: #fff; }
+input:-ms-input-placeholder { color: #fff; }
 
-textarea::-webkit-input-placeholder { color: #999999; }
-textarea:-moz-placeholder { color: #999999; }
-textarea::-moz-placeholder { color: #999999; }
-textarea:-ms-input-placeholder { color: #999999; }
+textarea::-webkit-input-placeholder { color: #fff; }
+textarea:-moz-placeholder { color: #fff; }
+textarea::-moz-placeholder { color: #fff; }
+textarea:-ms-input-placeholder { color: #fff; }
 
 /*---------------------------------------------*/
 button {
@@ -137,17 +143,19 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  font-family: Poppins-Regular;
+  font-family: Varela-Round;
   font-size: 13px;
   line-height: 1.5;
-  color: #999999;
+  padding-right: 25px;
+  color: #fff;
 }
 
 .txt2 {
-  font-family: Poppins-Regular;
+  font-family: Varela-Round;
   font-size: 13px;
+  padding-left:25px;
   line-height: 1.5;
-  color: #666666;
+  color: #fff;
 }
 
 
@@ -178,17 +186,17 @@ iframe {
   background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
   background: linear-gradient(-135deg, #c850c0, #4158d0); */
 
-  background: #9053c7;
-  background: -webkit-linear-gradient(-135deg, rgba(200, 80, 192, 0.4), rgba(65, 88, 208, 0.4));
-  background: -o-linear-gradient(-135deg, rgba(200, 80, 192, 0.4), rgba(65, 88, 208, 0.4));
-  background: -moz-linear-gradient(-135deg, rgba(200, 80, 192, 0.4), rgba(65, 88, 208, 0.4));
-  background: linear-gradient(-135deg, rgba(200, 80, 192, 0.4), rgba(65, 88, 208, 0.4));
+  background: #320071;
+  background: -webkit-linear-gradient(180deg, rgba(50, 0, 113, 0.4), rgba(234, 169, 39, 0.4));
+  background: -o-linear-gradient(180deg, rgba(50, 0, 113, 0.4), rgba(234, 169, 39, 0.4));
+  background: -moz-linear-gradient(180deg, rgba(50, 0, 113, 0.4), rgba(234, 169, 39, 0.4));
+  background: linear-gradient(180deg, rgba(50, 0, 113, 0.4), rgba(234, 169, 39, 0.4));
 }
 
 .wrap-login100 {
   /* width: 960px; */
-  background: #fff;
-  border-radius: 10px;
+  background: rgba(255,255,255, 0.3);
+  border-radius: 70px;
   overflow: hidden;
 
   display: -webkit-box;
@@ -198,14 +206,16 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 40px 48px 18px 48px;
+  padding: 10px 48px 48px 48px;
 }
 
 /*------------------------------------------------------------------
 [  ]*/
 .login100-pic {
   width: 290px;
-  padding: 0px 0px 33px 0px;
+  -webkit-filter: drop-shadow(2px 0px 2px rgba(0,0,0, 0.25));
+  filter: drop-shadow(2px 0px 2px rgba(0,0,0, 0.25));
+  padding: 0px 0px 30px 0px;
 }
 
 .login100-pic img {
@@ -220,9 +230,9 @@ iframe {
 }
 
 .login100-form-title {
-  font-family: Poppins-Bold;
+  font-family: Varela-Round;
   font-size: 24px;
-  color: #333333;
+  color: #fff;
   line-height: 1.2;
   text-align: center;
 
@@ -241,14 +251,14 @@ iframe {
 }
 
 .input100 {
-  font-family: Poppins-Medium;
+  font-family: Varela-Round;
   font-size: 15px;
   line-height: 1.5;
-  color: #666666;
+  color: #fff;
 
   display: block;
   width: 100%;
-  background: #e6e6e6;
+  background: rgba(255, 255, 255, 0.30);
   height: 50px;
   border-radius: 25px;
   padding: 0 30px 0 68px;
@@ -268,7 +278,7 @@ iframe {
   height: 100%;
   box-shadow: 0px 0px 0px 0px;
   /* color: rgba(87,184,70, 0.8); */
-  color: #9000ad;
+  color: #320071;
 }
 
 .input100:focus + .focus-input100 {
@@ -307,7 +317,7 @@ iframe {
   height: 100%;
   padding-left: 35px;
   pointer-events: none;
-  color: #666666;
+  color: #fff;
 
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -317,7 +327,7 @@ iframe {
 
 .input100:focus + .focus-input100 + .symbol-input100 {
   /* color: #57b846; */
-  color: #9000ad;
+  color: #320071;
 
   padding-left: 28px;
 }
@@ -337,7 +347,7 @@ iframe {
 }
 
 .login100-form-btn {
-  font-family: Montserrat-Bold;
+  font-family: Varela-Round;
   font-size: 15px;
   line-height: 1.5;
   color: #fff;
@@ -346,7 +356,7 @@ iframe {
   width: 100%;
   height: 50px;
   border-radius: 25px;
-  background: #9000ad;
+  background: #5F397F;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -365,9 +375,6 @@ iframe {
 .login100-form-btn:hover {
   background: #333333;
 }
-
-
-
 /*------------------------------------------------------------------
 [ Responsive ]*/
 
@@ -435,7 +442,7 @@ iframe {
   right: 8px;
   pointer-events: none;
 
-  font-family: Poppins-Medium;
+  font-family: Varela-Round;
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
