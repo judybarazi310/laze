@@ -196,7 +196,7 @@ iframe {
 .wrap-login100 {
   /* width: 960px; */
   background: rgba(255,255,255, 0.3);
-  border-radius: 70px;
+  border-radius: 48px;
   overflow: hidden;
 
   display: -webkit-box;
@@ -206,16 +206,16 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 10px 48px 48px 48px;
+  padding: 22px 48px 48px 48px;
 }
 
 /*------------------------------------------------------------------
 [  ]*/
 .login100-pic {
-  width: 290px;
+  /* width: 290px; */
   -webkit-filter: drop-shadow(2px 0px 2px rgba(0,0,0, 0.25));
   filter: drop-shadow(2px 0px 2px rgba(0,0,0, 0.25));
-  padding: 0px 0px 30px 0px;
+  padding: 0px 0px 20px 0px;
 }
 
 .login100-pic img {
@@ -379,43 +379,44 @@ iframe {
 [ Responsive ]*/
 
 
-/*
+
 
 @media (max-width: 992px) {
   .wrap-login100 {
-    padding: 177px 90px 33px 85px;
+    
   }
 
   .login100-pic {
-    width: 35%;
+    /* width: 35%; */
   }
 
   .login100-form {
-    width: 50%;
+    /* width: 50%; */
   }
 }
 
 @media (max-width: 768px) {
   .wrap-login100 {
-    padding: 100px 80px 33px 80px;
+    /* padding: 100px 80px 33px 80px; */
   }
 
   .login100-pic {
-    display: none;
+    /* display: none; */
   }
 
   .login100-form {
-    width: 100%;
+    /* width: 100%; */
   }
 }
 
 @media (max-width: 576px) {
   .wrap-login100 {
-    padding: 100px 15px 33px 15px;
+    padding: 6px 28px 28px 28px;
+    border-radius: 25px;
   }
 }
 
-*/
+
 
 
 /*------------------------------------------------------------------
