@@ -79,17 +79,35 @@
 </tr>
 
 <tr>
-<td><p>username</p></td>
-<td><p>input text</p></td>
-<td><p>The user’s login name</p></td>
+<td><p>guest-login</p></td>
+<td><p>button</p></td>
+<td><p>Allows the user to login as guest to view the MainView</p></td>
 </tr>
-
+ 
+<tr>
+<td><p>login</p></td>
+<td><p>button</p></td>
+<td><p>Submits user credentials and logs them into MainView if they are correct.</p></td>
+</tr>
+  
+<tr>
+<td><p>forgot-password</p></td>
+<td><p>button</p></td>
+<td><p>Creates dialogue with a textbox to prompt user to enter recovery email address.</p></td>
+</tr>
+  
 <tr>
 <td><p>password</p></td>
 <td><p>input text</p></td>
 <td><p>The user’s login password</p></td>
 </tr>
-
+  
+<tr>
+<td><p>register</p></td>
+<td><p>button</p></td>
+<td><p>Opens dialogue box that requests signup info</p></td>
+</tr>
+  
 <tr>
 <td><p>rememberMe</p></td>
 <td><p>button</p></td>
@@ -97,27 +115,9 @@
 </tr>
 
 <tr>
-<td><p>login</p></td>
-<td><p>button</p></td>
-<td><p>Submits user credentials and logs them into MainView if they are correct.</p></td>
-</tr>
-
-<tr>
-<td><p>register</p></td>
-<td><p>button</p></td>
-<td><p>Opens dialogue box that requests signup info</p></td>
-</tr>
-
-<tr>
-<td><p>forgot-password</p></td>
-<td><p>button</p></td>
-<td><p>Creates dialogue with a textbox to prompt user to enter recovery email address.</p></td>
-</tr>
-
-<tr>
-<td><p>guest-login</p></td>
-<td><p>button</p></td>
-<td><p>Allows the user to login as guest to view the MainView</p></td>
+<td><p>username</p></td>
+<td><p>input text</p></td>
+<td><p>The user’s login name</p></td>
 </tr>
 
 </tbody>
@@ -134,8 +134,50 @@
 <td><p>Type</p></td>
 <td><p>Description</p></td>
 </tr>
+ 
+<tr>
+<td><p>confirm-password</p></td>
+<td><p>input text</p></td>
+<td><p>User confirms their desired password</p></td>
+</tr>
+  
+<tr>
+<td><p>email</p></td>
+<td><p>Input text</p></td>
+<td><p>The users confirmation email address</p></td>
+</tr>
+ 
+<tr>
+<td><p>password</p></td>
+<td><p>input text</p></td>
+<td><p>The user’s desired login password</p></td>
+</tr>
 
 <tr>
+<td><p>password-check</p></td>
+<td><p>label</p></td>
+<td><p>Dynamic label that displays any errors regarding passwords not meeting requirements or if the two passwords don’t match</p></td>
+</tr>
+<tr>
+ 
+<tr>
+<td><p>register</p></td>
+<td><p>button</p></td>
+<td><p>Registers the account and sends out confirmation email.</p></td>
+</tr>
+  
+<tr>
+<td><p>terms-of-service</p></td>
+<td><p>button</p></td>
+<td><p>The text will be a link that if clicked will link the user to the terms of service.</p></td>
+</tr>
+  
+<tr>
+<td><p>tos-agreement</p></td>
+<td><p>radio button</p></td>
+<td><p>User checks this if he agrees to the terms of service</p></td>
+</tr>
+  
 <td><p>username</p></td>
 <td><p>input text</p></td>
 <td><p>The user’s desired name</p></td>
@@ -147,47 +189,6 @@
 <td><p>Dynamic label that displays if the entered username is available</p></td>
 </tr>
 
-<tr>
-<td><p>email</p></td>
-<td><p>Input text</p></td>
-<td><p>The users confirmation email address</p></td>
-</tr>
-
-<tr>
-<td><p>password</p></td>
-<td><p>input text</p></td>
-<td><p>The user’s desired login password</p></td>
-</tr>
-
-<tr>
-<td><p>confirm-password</p></td>
-<td><p>input text</p></td>
-<td><p>User confirms their desired password</p></td>
-</tr>
-
-<tr>
-<td><p>password-check</p></td>
-<td><p>label</p></td>
-<td><p>Dynamic label that displays any errors regarding passwords not meeting requirements or if the two passwords don’t match</p></td>
-</tr>
-
-<tr>
-<td><p>tos-agreement</p></td>
-<td><p>radio button</p></td>
-<td><p>User checks this if he agrees to the terms of service</p></td>
-</tr>
-
-<tr>
-<td><p>terms-of-service</p></td>
-<td><p>button</p></td>
-<td><p>The text will be a link that if clicked will link the user to the terms of service.</p></td>
-</tr>
-
-<tr>
-<td><p>register</p></td>
-<td><p>button</p></td>
-<td><p>Registers the account and sends out confirmation email.</p></td>
-</tr>
 
 </tbody>
 </table>
@@ -203,7 +204,13 @@
 <td><p>Type</p></td>
 <td><p>Description</p></td>
 </tr>
-
+  
+<tr>
+<td><p>confirmation</p></td>
+<td><p>label</p></td>
+<td><p>Dynamic label that tells the user if the email was sent successfully or if the email entered is not in the database.</p></td>
+</tr>
+  
 <tr>
 <td><p>email</p></td>
 <td><p>input text</p></td>
@@ -214,12 +221,6 @@
 <td><p>send</p></td>
 <td><p>button</p></td>
 <td><p>Submits the email entered to receive the password-change email</p></td>
-</tr>
-
-<tr>
-<td><p>confirmation</p></td>
-<td><p>label</p></td>
-<td><p>Dynamic label that tells the user if the email was sent successfully or if the email entered is not in the database.</p></td>
 </tr>
 
 </tbody>
@@ -239,17 +240,29 @@
 </tr>
 
 <tr>
-<td><p>whereTo</p></td>
-<td><p>input text</p></td>
-<td><p>Enter keywords to search pins</p></td>
+<td><p>addPin</p></td>
+<td><p>button</p></td>
+<td><p>Brings up the CreatePinView</p></td>
 </tr>
-
+  
 <tr>
 <td><p>food</p></td>
 <td><p>drop down</p></td>
 <td><p>Drop down menu that displays all current food related pins</p></td>
 </tr>
-
+  
+<tr>
+<td><p>info</p></td>
+<td><p>drop down</p></td>
+<td><p>Drop down menu that displays all current food related pins</p></td>
+</tr>
+  
+<tr>
+<td><p>mapPin</p></td>
+<td><p>button</p></td>
+<td><p>Any active pin on the map when clicked will bring up a dialogue containing the details of that pin.</p></td>
+</tr>
+  
 <tr>
 <td><p>study</p></td>
 <td><p>drop down</p></td>
@@ -257,9 +270,9 @@
 </tr>
 
 <tr>
-<td><p>info</p></td>
-<td><p>drop down</p></td>
-<td><p>Drop down menu that displays all current food related pins</p></td>
+<td><p>whereTo</p></td>
+<td><p>input text</p></td>
+<td><p>Enter keywords to search pins</p></td>
 </tr>
 
 <tr>
@@ -272,18 +285,6 @@
 <td><p>zoomOut</p></td>
 <td><p>button</p></td>
 <td><p>Zooms the map out</p></td>
-</tr>
-
-<tr>
-<td><p>mapPin</p></td>
-<td><p>button</p></td>
-<td><p>Any active pin on the map when clicked will bring up a dialogue containing the details of that pin.</p></td>
-</tr>
-
-<tr>
-<td><p>addPin</p></td>
-<td><p>button</p></td>
-<td><p>Brings up the CreatePinView</p></td>
 </tr>
 
 </tbody>
@@ -302,12 +303,6 @@
 </tr>
 
 <tr>
-<td><p>mapselector</p></td>
-<td><p>map</p></td>
-<td><p>User clicks on the map where they would like to place their pin</p></td>
-</tr>
-
-<tr>
 <td><p>category</p></td>
 <td><p>drop down</p></td>
 <td><p>Drop down menu that allows the user to select the category of their pin (ex. Food, study, parking, etc.)</p></td>
@@ -318,17 +313,23 @@
 <td><p>input text</p></td>
 <td><p>User enters the details of their pin</p></td>
 </tr>
+ 
+<tr>
+<td><p>exit</p></td>
+<td><p>button</p></td>
+<td><p>X button that allows the user to cancel pin creation and return back to MainView</p></td>
+</tr>
+  
+<tr>
+<td><p>mapselector</p></td>
+<td><p>map</p></td>
+<td><p>User clicks on the map where they would like to place their pin</p></td>
+</tr>
 
 <tr>
 <td><p>submit</p></td>
 <td><p>button</p></td>
 <td><p>Submits the user’s pin to be posted</p></td>
-</tr>
-
-<tr>
-<td><p>exit</p></td>
-<td><p>button</p></td>
-<td><p>X button that allows the user to cancel pin creation and return back to MainView</p></td>
 </tr>
 
 </tbody>
@@ -351,18 +352,6 @@
 </tr>
 
 <tr>
-<td><p>Login()</p></td>
-<td><p>Email address, encrypted password, rememberMe (boolean)</p></td>
-<td><p>Takes login information and allows or denies the user access to the next page</p></td>
-</tr>
-
-<tr>
-<td><p>ResetPassword()</p></td>
-<td><p>Email address</p></td>
-<td><p>ResetPassword takes an email address, and if it matches an email address in the system, it sends a password reset link to that address</p></td>
-</tr>
-
-<tr>
 <td><p>CreateUser()</p></td>
 <td><p>Email address, name, username, encrypted password, profile photo (optional)</p></td>
 <td><p>Creates a user in the database. Returns the result of action (i.e. it worked, or there was an error)</p></td>
@@ -372,6 +361,18 @@
 <td><p>DeleteUser()</p></td>
 <td><p>Email address, encrypted password</p></td>
 <td><p>Deletes the user from the database. We must decide which user data will be orphaned and which data will be deleted.</p></td>
+</tr>
+  
+<tr>
+<td><p>Login()</p></td>
+<td><p>Email address, encrypted password, rememberMe (boolean)</p></td>
+<td><p>Takes login information and allows or denies the user access to the next page</p></td>
+</tr>
+
+<tr>
+<td><p>ResetPassword()</p></td>
+<td><p>Email address</p></td>
+<td><p>ResetPassword takes an email address, and if it matches an email address in the system, it sends a password reset link to that address</p></td>
 </tr>
 
 <tr>
@@ -401,17 +402,35 @@
 <td><p>Email address, Pin location, pin type, pin description, pin name/title</p></td>
 <td><p>Verifies information and creates a pin. Notifies the front end of the result. Logs information about pin creation.</p></td>
 </tr>
-
-<tr>
-<td><p>SetPinData() (setters of the Pin class)</p></td>
-<td><p>Email address</p></td>
-<td><p>Pin data will be updated with setters of the Pin class. Changes will be logged.</p></td>
-</tr>
-
+  
 <tr>
 <td><p>DeletePin()</p></td>
 <td><p>Email address, pin id</p></td>
 <td><p>Will remove the pin and related data. Action will be logged.</p></td>
+</tr>
+ 
+<tr>
+<td><p>DownVotePin()</p></td>
+<td><p>Email address, pin id</p></td>
+<td><p>Decreases the Rating of [Pin ID], and records the rating in the list of users which have rated this pin.</p></td>
+</tr>
+ 
+<tr>
+<td><p>FlagAsBad()</p></td>
+<td><p>Email address, pin id, reason (enum), description</p></td>
+<td><p>Allows users to flag pins as bad (spam, inappropriate, etc). Adds pin to a list of suggested actions for moderators to take.</p></td>
+</tr>
+  
+<tr>
+<td><p>Search()</p></td>
+<td><p>Query (string)</p></td>
+<td><p>Searches the various aspects of pins for relevant information. Returns a list of pins.</p></td>
+</tr>
+  
+<tr>
+<td><p>SetPinData() (setters of the Pin class)</p></td>
+<td><p>Email address</p></td>
+<td><p>Pin data will be updated with setters of the Pin class. Changes will be logged.</p></td>
 </tr>
 
 <tr>
@@ -420,23 +439,6 @@
 <td><p>Increases the Rating of [Pin ID], and records the rating in the list of users which have rated this pin.</p></td>
 </tr>
 
-<tr>
-<td><p>DownVotePin()</p></td>
-<td><p>Email address, pin id</p></td>
-<td><p>Decreases the Rating of [Pin ID], and records the rating in the list of users which have rated this pin.</p></td>
-</tr>
-
-<tr>
-<td><p>FlagAsBad()</p></td>
-<td><p>Email address, pin id, reason (enum), description</p></td>
-<td><p>Allows users to flag pins as bad (spam, inappropriate, etc). Adds pin to a list of suggested actions for moderators to take.</p></td>
-</tr>
-
-<tr>
-<td><p>Search()</p></td>
-<td><p>Query (string)</p></td>
-<td><p>Searches the various aspects of pins for relevant information. Returns a list of pins.</p></td>
-</tr>
 
 </tbody>
 </table>
