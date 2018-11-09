@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Laze Login</title>
+	<title>Password Reset</title>
 	<meta charset="UTF-8">
 
 	{% load static %}
@@ -30,54 +30,15 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 
-				<form class="login100-form validate-form" method="post">{% csrf_token %}
+				<form class="login100-form validate-form" method="post">
+                    {% csrf_token %}
 					<div class="login100-pic js-tilt" data-tilt>
 						<img src="{% static "images/Laze Logo.png" %}" alt="Laze">
 					</div>
-
-					<p>{{ form.non_field_errors }}</p>
-
-					<br>
-
-					<div class="wrap-input100 validate-input" data-validate = "Username is required">
-						<p>{{ form.username.errors }}</p>
-						<input class="input100" id="{{ form.username.id_for_label }}" type="text" name="{{ form.username.html_name }}" placeholder="Username">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-user" aria-hidden="true"></i>
-						</span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						{{ form.password.errors }}
-						<input class="input100" id="{{ form.password.id_for_label }}" type="password" name="{{ form.password.html_name }}" placeholder="Password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-					</div>
-					
-					<div class="text-left fs-13 p-t-5 text-white">
-						<input type="checkbox" checked="checked">
-						Remember me
-						<span class="checkmark"></span>
-					</div>
-
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" type = "submit">
-							Login
-						</button>
-					</div>
-
-					<div class="text-center p-t-12">
-						<a class="txt1" href="{% url 'reset' %}">
-							Forgot Username/Password
-						</a>
-						<a class="txt2" href="#">
-							Register
-						</a>
-					</div>
-				</form>
+                    {% block info %}
+                    {% endblock %}
+                </form>
+                
 			</div>
 		</div>
 	</div>
