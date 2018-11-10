@@ -35,18 +35,27 @@
 						<img src="{% static "images/Laze Logo.png" %}" alt="Laze">
 					</div>
 
-					<div style="color: white;">{{ form.non_field_errors }}</div>
-
-					<br>
+                    <div style="color: white;">{{ form.non_field_errors }}</div>
+                    
+                    <br>
+                    
+                    <div class="wrap-input100 validate-input" data-validate = "Email is required">
+						<p>{{ form.email.errors }}</p>
+						<input class="input100" id="{{ form.email.id_for_label }}" type="text" name="{{ form.email.html_name }}" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Username is required">
-						<p> {{ form.username.errors }}</p>
+						<p>{{ form.username.errors }}</p>
 						<input class="input100" id="{{ form.username.id_for_label }}" type="text" name="{{ form.username.html_name }}" placeholder="Username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
 						</span>
-					</div>
+                    </div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
 						{{ form.password.errors }}
@@ -56,26 +65,32 @@
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
-					
+                    
+                    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<p>{{ form.confirm_pass.errors }}</p>
+						<input class="input100" id="{{ form.confirm_pass.id_for_label }}" type="password" name="{{ form.confirm_pass.html_name }}" placeholder="Confirm password" onchange="passMatch();">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+
+                    <div class = "text-left fs-15 p-l-10 p-b-10 text-white" id = "checkPassMatch"></div>
+
 					<div class="text-left fs-13 p-t-5 text-white">
+						<input type="checkbox" onchange="document.getElementById('id_password1').type = this.checked ? 'text' : 'password'"> Show password 
+                    </div>
+
+                    <div class="text-left fs-13 p-t-5 text-white">
 						<input type="checkbox">
-						Remember me
+						    Agree to terms of service
 						<span class="checkmark"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Sign Up
 						</button>
-					</div>
-
-					<div class="text-center p-t-12">
-						<a class="txt1" href="#">
-							Forgot Username/Password
-						</a>
-						<a class="txt2" href="#">
-							Register
-						</a>
 					</div>
 				</form>
 			</div>
@@ -97,7 +112,8 @@
 		})
 	</script>
 	<!--===============================================================================================-->
-	<script src="{% static "users/js/main.js" %}"></script>
+    <script src="{% static "users/js/main.js" %}"></script>
+    <script src="{% static "users/js/register.js" %}"></script>
 
 </body>
 </html>

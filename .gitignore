@@ -91,6 +91,8 @@ celerybeat-schedule
 .venv
 env/
 laze-venv/
+laze-env/
+.vscode/
 venv/
 ENV/
 env.bak/
