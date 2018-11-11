@@ -2,9 +2,10 @@ from django.conf.urls import url
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from .views import register
+from .views import mapview
 
 urlpatterns = [
-	url(r'^login/$', auth_views.LoginView.as_view(template_name='login.html')),
+	url(r'^login/$', auth_views.LoginView.as_view(template_name='login.html'), name="login"),
 	url(r'^logout/$', auth_views.LogoutView.as_view()),
 	url(r'^register/$', register),
 	path('password-reset/',
@@ -27,4 +28,5 @@ urlpatterns = [
 		auth_views.PasswordResetCompleteView.as_view(
 			template_name='password_reset/password_reset_complete.html'), 
 		name = "password_reset_complete"),
+	path ('', mapview, name = "map_page"),
 ]

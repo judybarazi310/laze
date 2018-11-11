@@ -16,5 +16,8 @@ def register(request):
 			return redirect('/')
 	else:
 		form = RegisterForm()
-
+		
 	return render(request, 'register.html', {'form': form})
+
+def mapview(request):
+	return render(request, 'mapview.html')
