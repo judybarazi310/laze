@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
 	path('accounts/', include('users.urls')),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name = "admin_page"),
+    # path ('', name = "map_page"), map page here
 ]
