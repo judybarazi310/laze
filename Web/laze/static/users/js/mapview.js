@@ -49,32 +49,32 @@ function initMap() {
     subwaywindow.open(map, subwaymarker);
     })
 
-    clickListener(map);
-    // setOverlay(map);
+    let overlay = setOverlay(map);
+    addOverlayClickListener(map, overlay);
+    
 }
 
-function clickListener(map) {
-    map.addListener('click', function(event) {
-        var userin = prompt("What is happening here?");
-        if (userin != null && userin != ''){
-            var newCoordinates = {lat: event.latLng.lat(), lng: event.latLng.lng()};
-            var newMarkerString = '<h1>' + userin + '</h1>';
-            var newMarker = new google.maps.Marker({
+function addOverlayClickListener(map, overlay) {
+    overlay.addListener('click', (event) => {
+        let userin = prompt("What is happening here?");
+        if (userin !== null && userin !== ''){
+            let newCoordinates = {lat: event.latLng.lat(), lng: event.latLng.lng()};
+            let newMarkerString = '<h1>' + userin + '</h1>';
+            let newMarker = new google.maps.Marker({
                 position: newCoordinates,
                 map: map,
                 icon: pinIcon,
                 title: 'New marker'
             });
-            var newMarkerWindow = new google.maps.InfoWindow({
+            let newMarkerWindow = new google.maps.InfoWindow({
                 content: newMarkerString,
                 maxWidth: 200
             });
-            newMarker.addListener('click', function(){
+            newMarker.addListener('click', () => {
                 newMarkerWindow.open(map, newMarker);
-            })
+            });
         }
-
-    })
+    });
 }
 
 function setOverlay(map){
@@ -88,4 +88,6 @@ function setOverlay(map){
         overlayUrl,
         imageBounds);
     wluOverlay.setMap(map);
+    
+    return wluOverlay;
 }
