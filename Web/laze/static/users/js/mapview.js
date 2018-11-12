@@ -2,6 +2,9 @@
 // When the user clicks the marker, an info window opens.
 // The maximum width of the info window is set to 200 pixels.
 
+// maps api:
+// https://developers.google.com/maps/documentation/javascript/examples/map-simple
+
 function initMap() {
     var wlu = {lat: 43.4735, lng: -80.5273};
     var tims = {lat: 43.4732, lng: -80.5255};
@@ -29,11 +32,13 @@ function initMap() {
     var timsmarker = new google.maps.Marker({
     position: tims,
     map: map,
+    icon: pinIcon,
     title: 'Tim Hortons Science'
     });
     var subwaymarker = new google.maps.Marker({
     position: subway,
     map: map,
+    icon: pinIcon,
     title: 'Subway Bricker'
     });
 
@@ -45,6 +50,7 @@ function initMap() {
     })
 
     clickListener(map);
+    // setOverlay(map);
 }
 
 function clickListener(map) {
@@ -56,6 +62,7 @@ function clickListener(map) {
             var newMarker = new google.maps.Marker({
                 position: newCoordinates,
                 map: map,
+                icon: pinIcon,
                 title: 'New marker'
             });
             var newMarkerWindow = new google.maps.InfoWindow({
@@ -68,4 +75,17 @@ function clickListener(map) {
         }
 
     })
+}
+
+function setOverlay(map){
+    var imageBounds = {
+        north: 43.4768,
+        south: 43.4712,
+        east: -80.5203,
+        west: -80.5322
+    };
+    wluOverlay = new google.maps.GroundOverlay(
+        overlayUrl,
+        imageBounds);
+    wluOverlay.setMap(map);
 }
