@@ -79,10 +79,10 @@ function addOverlayClickListener(map, overlay) {
 
 function setOverlay(map){
     var imageBounds = {
-        north: 43.4768,
-        south: 43.4712,
-        east: -80.5203,
-        west: -80.5322
+        north: 43.4763,
+        south: 43.4687,
+        east: -80.5192,
+        west: -80.5331
     };
     wluOverlay = new google.maps.GroundOverlay(
         overlayUrl,
