@@ -14,7 +14,8 @@ function initMap() {
         zoom: 17,
         center: wlu,
         streetViewControl: false,
-        fullscreenControl: false
+        fullscreenControl: false,
+        mapTypeControl: false
     });
     
     var timsString = '<h1>Tims</h1>';
