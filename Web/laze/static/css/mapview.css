@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Varela-Round;
+    src:url('../fonts/Varela_Round/VarelaRound-Regular.ttf');
+  }
+
 /* Always set the map height explicitly to define the size of the div
     * element that contains the map. */
 #map {
@@ -23,4 +28,155 @@ html, body {
     width: inherit;
     height: inherit;
     opacity: 0.75;
+}
+
+.menu-wrapper {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    font-family: Varela-Round;
+    font-size: 15px;
+    height: 100%;
+}
+
+.menu-container {
+    border-radius: 85px;
+    background:rgb(255, 255, 255, 0.85);
+    position: relative;
+    padding: 32px;
+    max-height: calc(100vh - 3rem);
+}
+
+.search-bar-wrapper {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    padding: 0 16px;
+}
+
+.search-bar {
+    line-height: 1.5;
+    border: none;
+    border-radius: 16px;
+    width: 272px;
+    height: 40px;
+    background: #F1F3F8;
+    padding: 0 56px 0 30px;
+    color: #555555
+}
+
+.search-bar:focus {
+    outline: none;
+}
+
+.search-symbol {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 32px;
+    padding-top: 8px;
+    cursor: pointer;
+    color: #555555;
+
+    transition: 200ms;
+    -webkit-transition: 200ms;
+}
+
+.search-symbol:hover {
+    color: #320071;
+}
+
+.menu-group-wrapper {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    margin-top: 24px;
+    border-radius: 16px;
+    padding: 4px 8px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.25);
+    background: #fff;
+}
+
+.menu-group-header {
+    line-height: 1.5;
+    width: 256px;
+    height: 40px;
+    padding: 0px 56px 0 30px;
+    color: #555555;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-group-body{
+    transition: 0.3s ease-out;
+    height: auto;
+    max-height: 256px;
+    padding: 0 0 8px 22px;
+}
+
+.menu-group-body.collapsed{
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu-group-body > div:not(:first-child){ 
+    padding-top: 10px;
+}
+
+.menu-group-symbol {
+    /* margin-top: -5px; */
+    padding-right: 12px;
+    pointer-events: none;
+}
+
+.menu-group-symbol i {
+    transform: rotate(-90deg);
+    transition: 0.3s ease-out;
+}
+
+.menu-group-symbol.rotate i{
+    transform: rotate(0deg);
+}
+
+.menu-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+.menu-scroll::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 20px;
+}
+
+.menu-scroll::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 20px;
+}
+
+.menu-scroll {
+    overflow-y: auto;
+    overflow-y: overlay;
+}
+
+.icon-wrapper {
+    padding-right: 8px;
+}
+
+.icon-wrapper img{
+    height: 20px;
+    width: 20px;
+}
+
+.v-center {
+	display:flex;
+	align-items: center;
+}
+
+.menu-inner-wrapper {
+    max-height: calc(100vh - 3rem - 120px);
+    padding: 0 16px 24px 16px;
+    
 }

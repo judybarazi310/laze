@@ -5,6 +5,19 @@
 // maps api:
 // https://developers.google.com/maps/documentation/javascript/examples/map-simple
 
+function toggleMenuGroup(event) {
+    $(event.target).parent().children(".menu-group-body").each((i, child) => {
+        $(child).toggleClass("collapsed");
+    });
+    $(event.target).children().first().toggleClass("rotate");
+}
+
+function createMenuGroupListeners(){
+    $(".menu-group-header").each((i, obj) => {
+        $(obj).click(toggleMenuGroup);
+    });
+}
+
 function initMap() {
     var wlu = {lat: 43.4735, lng: -80.5273};
     var tims = {lat: 43.4732, lng: -80.5255};
@@ -92,3 +105,5 @@ function setOverlay(map){
     
     return wluOverlay;
 }
+
+createMenuGroupListeners();

@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{% load static %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="{% static "images/icons/Map Pin Icon.png" %}"/>
 	<!--===============================================================================================-->
@@ -25,13 +26,203 @@
 	<!--===============================================================================================-->
 </head>
 <body>
-	
+	<script src="{% static "users/vendor/jquery/jquery-3.2.1.min.js" %}"></script>
+
 	<div class="logo-wrapper">
 		<img src="{% static "images/Laze Logo.png" %}" alt="Laze">
 	</div>
-	
+
 	<div class="limiter">
 		<div id="map"></div>
+	</div>
+
+	<div class="menu-wrapper">
+		<div class="menu-container ml-4 my-4">
+			<div class="search-bar-wrapper v-center">
+				<input class="search-bar" type="text" placeholder="Where to?">
+				<span class="search-symbol">
+					<i class="fa fa-search" aria-hidden="true"></i>
+				</span>
+			</div> 
+			<div class="menu-inner-wrapper menu-scroll">
+				<div class="menu-group-wrapper">
+					<div class ="menu-group-header">
+						<span class="menu-group-symbol">
+							<i class="fa fa-sort-down" aria-hidden="true"></i>
+						</span>
+						Food
+					</div>
+					<div class ="menu-group-body collapsed menu-scroll">
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Food.png" %}" alt="Laze">
+							</div>
+							<div>
+								Bento Sushi
+							</div>
+						</div>
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Coffee.png" %}" alt="Laze">
+							</div>
+							<div>
+								Byte 75 Coffee & Social
+							</div>
+						</div>
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Food.png" %}" alt="Laze">
+							</div>
+							<div>
+								El Torito
+							</div>
+						</div>
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Food.png" %}" alt="Laze">
+							</div>
+							<div>
+								Fresh Food Company
+							</div>
+						</div>
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Food.png" %}" alt="Laze">
+							</div>
+							<div>
+								Harveys
+							</div>
+						</div>
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Food.png" %}" alt="Laze">
+							</div>
+							<div>
+								Mr Sub
+							</div>
+						</div>
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Food.png" %}" alt="Laze">
+							</div>
+							<div>
+								Pizza Pizza
+							</div>
+						</div>
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Coffee.png" %}" alt="Laze">
+							</div>
+							<div>
+								Second Cup
+							</div>
+						</div>
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Food.png" %}" alt="Laze">
+							</div>
+							<div>
+								Starbucks
+							</div>
+						</div>
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Food.png" %}" alt="Laze">
+							</div>
+							<div>
+								Subway
+							</div>
+						</div>
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Food.png" %}" alt="Laze">
+							</div>
+							<div>
+								Terrace Food Court
+							</div>
+						</div>
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Coffee.png" %}" alt="Laze">
+							</div>
+							<div>
+								Tim Hortons
+							</div>
+						</div>
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Food.png" %}" alt="Laze">
+							</div>
+							<div>
+								Union Market
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="menu-group-wrapper">
+					<div class ="menu-group-header">
+						<span class="menu-group-symbol">
+							<i class="fa fa-sort-down" aria-hidden="true"></i>
+						</span>
+						Study
+					</div>
+					<div class ="menu-group-body collapsed menu-scroll">
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Resources.png" %}" alt="Laze">
+							</div>
+							<div>
+								Test
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="menu-group-wrapper">
+					<div class ="menu-group-header">
+						<span class="menu-group-symbol">
+							<i class="fa fa-sort-down" aria-hidden="true"></i>
+						</span>
+						Parking
+					</div>
+					<div class ="menu-group-body collapsed menu-scroll">
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Parking.png" %}" alt="Laze">
+							</div>
+							<div>
+								Test
+							</div>
+						</div>
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Bike_Parking.png" %}" alt="Laze">
+							</div>
+							<div>
+								Test
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="menu-group-wrapper">
+					<div class ="menu-group-header">
+						<span class="menu-group-symbol">
+							<i class="fa fa-sort-down" aria-hidden="true"></i>
+						</span>
+						Info
+					</div>
+					<div class ="menu-group-body collapsed menu-scroll">
+						<div class ="menu-group-item v-center">
+							<div class = "icon-wrapper">						
+								<img src="{% static "images/icons/Resources.png" %}" alt="Laze">
+							</div>
+							<div>
+								Test
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- mapview js: -->
@@ -45,7 +236,7 @@
 	</script>
 	
 	<!--===============================================================================================-->	
-	<script src="{% static "users/vendor/jquery/jquery-3.2.1.min.js" %}"></script>
+
 	<!--===============================================================================================-->
 	<script src="{% static "users/vendor/bootstrap/js/popper.js" %}"></script>
 	<script src="{% static "users/vendor/bootstrap/js/bootstrap.min.js" %}"></script>
