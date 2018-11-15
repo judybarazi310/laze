@@ -5,6 +5,8 @@
 // maps api:
 // https://developers.google.com/maps/documentation/javascript/examples/map-simple
 
+var markers = [];
+
 function toggleMenuGroup(event) {
     $(event.target).parent().children(".menu-group-body").each((i, child) => {
         $(child).toggleClass("collapsed");
@@ -30,65 +32,48 @@ function initMap() {
         fullscreenControl: false,
         mapTypeControl: false
     });
-    
-    var timsString = '<h1>Tims</h1>';
-    var subwayString = '<h1>Subway Bricker</h1>';
 
-    var timswindow = new google.maps.InfoWindow({
-    content: timsString,
-    maxWidth: 200
-    });
-    var subwaywindow = new google.maps.InfoWindow({
-    content: subwayString,
-    maxWidth: 200
-    });
-
-    var timsmarker = new google.maps.Marker({
-    position: tims,
-    map: map,
-    icon: pinIcon,
-    title: 'Tim Hortons Science'
-    });
-    var subwaymarker = new google.maps.Marker({
-    position: subway,
-    map: map,
-    icon: pinIcon,
-    title: 'Subway Bricker'
-    });
-
-    timsmarker.addListener('click', function(){
-    timswindow.open(map, timsmarker);
-    })
-    subwaymarker.addListener('click', function(){
-    subwaywindow.open(map, subwaymarker);
-    })
+    createPin("Tim Hortons", "text", tims, map);
+    createPin("Subway Bricker", "text", subway, map);
 
     let overlay = setOverlay(map);
     addOverlayClickListener(map, overlay);
-    
 }
 
 function addOverlayClickListener(map, overlay) {
     overlay.addListener('click', (event) => {
-        let userin = prompt("What is happening here?");
-        if (userin !== null && userin !== ''){
-            let newCoordinates = {lat: event.latLng.lat(), lng: event.latLng.lng()};
-            let newMarkerString = '<h1>' + userin + '</h1>';
-            let newMarker = new google.maps.Marker({
-                position: newCoordinates,
-                map: map,
-                icon: pinIcon,
-                title: 'New marker'
-            });
-            let newMarkerWindow = new google.maps.InfoWindow({
-                content: newMarkerString,
-                maxWidth: 200
-            });
-            newMarker.addListener('click', () => {
-                newMarkerWindow.open(map, newMarker);
-            });
-        }
+        let newCoordinates = {lat: event.latLng.lat(), lng: event.latLng.lng()};
+        $('.form-control').val('').removeClass('empty-input-field');
+        $('#newPinDialog').modal('show');
+        $('#newPinDialog .btn-primary').off().click(function() {
+            let location = $('#location-title').val();
+            let message = $('#message-text').val();
+            if (location === '' || message === '') {
+                $('.form-control').addClass('empty-input-field');
+            } else {
+                $('#newPinDialog').modal('hide');
+                createPin(location, message, newCoordinates, map);
+            }
+        });
     });
+}
+
+function createPin(location, message, coordinates, map) {
+    let newMarker = new google.maps.Marker({
+        position: coordinates,
+        map: map,
+        icon: pinIcon,
+        title: location
+    });
+    let newMarkerString = '<h1 style="font-family: Varela-Round; font-size:1.5rem">' + location + '</h1><br>' + '<p style="font-family: Varela-Round; font-size:1rem">' + message + '</p>';
+    let newMarkerWindow = new google.maps.InfoWindow({
+        content: newMarkerString,
+        maxWidth: 200
+    });
+    newMarker.addListener('click', () => {
+        newMarkerWindow.open(map, newMarker);
+    });
+    markers.push(newMarker);
 }
 
 function setOverlay(map){
