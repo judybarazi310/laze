@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from maps import views
 
 urlpatterns = [
 	path('accounts/', include('users.urls')),
     path('admin/', admin.site.urls, name = "admin_page"),
-    # path ('', name = "map_page"), map page here
+    path ('',  views.mapsView.as_view(),  name = "map_page"), 
 ]

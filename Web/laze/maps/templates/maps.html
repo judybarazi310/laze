@@ -1,0 +1,30 @@
+{% load static %}
+<body>
+
+    <img src = "{% static 'images/map.png' %}">
+
+
+</body>
+
+	
+<!--===============================================================================================-->	
+<script src="{% static 'maps/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+
+    <script>
+    $(document).ready(function(){ 
+        $(document).click(function (ev) {
+            $("body").append(            
+                $('<div class="marker"></div>').css({
+                    position: 'absolute',
+                    top: ev.pageY + 'px',
+                    left: ev.pageX + 'px',
+                    width: '10px',
+                    height: '10px',
+                    background: '#000000'
+                })              
+            );
+        });
+        
+    });
+    </script>
