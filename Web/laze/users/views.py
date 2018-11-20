@@ -20,4 +20,4 @@ def register(request):
 	return render(request, 'register.html', {'form': form})
 
 def mapview(request):
-	return render(request, 'mapview.html')
+	return render(request, 'maps/maps.html')
