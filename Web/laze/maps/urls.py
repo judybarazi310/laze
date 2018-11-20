@@ -1,7 +1,6 @@
 from django.conf.urls import url
-from .views import MapsView
+from .views import maps_view
 
 urlpatterns = [
-    url(r'/$', MapsView.as_view(), name="maps"),
-    url(r'^ajax/createPin/$', MapsView.createPin, name="create_pin"),
+    url(r'/$', maps_view, name="map_page"),
 ]

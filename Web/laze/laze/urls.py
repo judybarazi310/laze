@@ -18,7 +18,7 @@ from django.urls import path, include
 from maps import views
 
 urlpatterns = [
-	path('accounts/', include('users.urls')),
-    path('admin/', admin.site.urls, name = "admin_page"),
-    path ('',  views.MapsView.as_view(),  name = "map_page"),
+    path('accounts/', include('users.urls')),
+    path('admin/', admin.site.urls, name="admin_page"),
+    path('', views.maps_view, name="map_page"),
 ]

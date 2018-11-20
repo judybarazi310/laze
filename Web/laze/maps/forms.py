@@ -5,4 +5,4 @@ from .models import Pin
 class PinForm(ModelForm):
     class Meta:
         model = Pin
-        fields = ('title', 'description', 'category', 'latitude', 'longitude')
+        fields = ('title', 'description', 'category')
