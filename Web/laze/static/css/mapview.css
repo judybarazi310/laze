@@ -42,7 +42,8 @@ html, body {
 
 .menu-container {
     border-radius: 85px;
-    background:rgb(255, 255, 255, 0.85);
+    background:rgb(250, 250, 250, 0.85);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
     padding: 32px;
     max-height: calc(100vh - 3rem);

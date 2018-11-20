@@ -28,5 +28,5 @@ urlpatterns = [
 		auth_views.PasswordResetCompleteView.as_view(
 			template_name='password_reset/password_reset_complete.html'), 
 		name = "password_reset_complete"),
-	path ('', mapview, name = "map_page"),
+	# path ('', mapview, name = "map_page"),
 ]

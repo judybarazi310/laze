@@ -21,12 +21,20 @@ function createMenuGroupListeners(){
 }
 
 function initMap() {
+    var strictBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(43.461, -80.559),
+        new google.maps.LatLng(43.4872, -80.509), 
+        
+    )
     var wlu = {lat: 43.4735, lng: -80.5273};
     var tims = {lat: 43.4732, lng: -80.5255};
     var subway = {lat: 43.4727, lng: -80.5265};
+    
 
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 17,
+        minZoom:16,
+        maxZoom:20,
+        zoom: 16,
         center: wlu,
         streetViewControl: false,
         fullscreenControl: false,
@@ -38,6 +46,26 @@ function initMap() {
 
     let overlay = setOverlay(map);
     addOverlayClickListener(map, overlay);
+    google.maps.event.addListener(map, 'dragend', function() {
+        if (strictBounds.contains(map.getCenter())) return;
+        var c = map.getCenter(),
+         x = c.lng(),
+         y = c.lat(),
+         maxX = strictBounds.getNorthEast().lng(),
+         maxY = strictBounds.getNorthEast().lat(),
+         minX = strictBounds.getSouthWest().lng(),
+         minY = strictBounds.getSouthWest().lat();
+
+     if (x < minX) x = minX;
+     if (x > maxX) x = maxX;
+     if (y < minY) y = minY;
+     if (y > maxY) y = maxY;
+
+     map.setCenter(new google.maps.LatLng(y, x));
+    });
+    google.maps.event.addListener(map, 'zoom_changed', function() {
+        if (map.getZoom() < minZoomLevel) map.setZoom(minZoomLevel);
+    });
 }
 
 function addOverlayClickListener(map, overlay) {

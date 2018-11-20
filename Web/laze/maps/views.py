@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 class mapsView(TemplateView):
-    template_name = "mapview.html"
+    template_name = "maps.html"
     def get(self, request):
         return render(request, self.template_name)
         
