@@ -49,7 +49,7 @@
 
 
                         <div class="modal-footer">
-                            <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
@@ -72,117 +72,27 @@
         </div>
         <div class="menu-inner-wrapper menu-scroll">
             <div class="menu-group-wrapper">
+            {% block food %}
                 <div class="menu-group-header">
 						<span class="menu-group-symbol">
 							<i class="fa fa-sort-down" aria-hidden="true"></i>
 						</span>
                     Food
                 </div>
+
                 <div class="menu-group-body collapsed menu-scroll">
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Food.png" %}" alt="Laze">
+                    {% for food_pin in food_pin_list %}
+                        <div class="menu-group-item v-center">
+                            <div class="icon-wrapper">
+                                <img src="{% static "images/icons/Food.png" %}" alt="{{ food_pin.category }}"><!-- TODO make the icons change automatically based on the category of the pin-->
+                            </div>
+                            <div>
+                                {{ food_pin.title }}
+                            </div>
                         </div>
-                        <div>
-                            Bento Sushi
-                        </div>
-                    </div>
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Coffee.png" %}" alt="Laze">
-                        </div>
-                        <a href="{% url 'login' %}">Testing url</a>
 
-
-                    </div>
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Food.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            El Torito
-                        </div>
-                    </div>
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Food.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Fresh Food Company
-                        </div>
-                    </div>
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Food.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Harveys
-                        </div>
-                    </div>
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Food.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Mr Sub
-                        </div>
-                    </div>
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Food.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Pizza Pizza
-                        </div>
-                    </div>
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Coffee.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Second Cup
-                        </div>
-                    </div>
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Food.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Starbucks
-                        </div>
-                    </div>
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Food.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Subway
-                        </div>
-                    </div>
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Food.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Terrace Food Court
-                        </div>
-                    </div>
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Coffee.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Tim Hortons
-                        </div>
-                    </div>
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Food.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Union Market
-                        </div>
-                    </div>
+                    {% endfor %}
+                    {% endblock %}
                 </div>
             </div>
             <div class="menu-group-wrapper">
