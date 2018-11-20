@@ -5,21 +5,21 @@ from django.db import models
 class Pin(models.Model):
     PIN_CATEGORIES = (
         ('FOOD', 'Food'),
-        ('Entertainment',(
-                ('T', 'Theater'),
-                ('M', 'Mall'),
-            )
-        ),
+        ('Entertainment', (
+            ('T', 'Theater'),
+            ('M', 'Mall'),
+        )
+         ),
         ('VEHP', 'Parking'),
         ('STY', 'Study'),
-        ('Recreational',(
-                ('GYM', 'Gym'),
-                ('POOL', 'Swimming Pool'),
-                ('SQUA', 'Squash Court'),
-                ('BSKT', 'Basketball Court'),
-                ('PARK', 'Parks'),
+        ('Recreational', (
+            ('GYM', 'Gym'),
+            ('POOL', 'Swimming Pool'),
+            ('SQUA', 'Squash Court'),
+            ('BSKT', 'Basketball Court'),
+            ('PARK', 'Parks'),
 
-            )
+        )
          ),
     )
     # automatic models.AutoField(primary_key = True)
