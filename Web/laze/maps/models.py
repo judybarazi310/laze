@@ -21,6 +21,8 @@ class Pin(models.Model):
 
         )
          ),
+        ('INFO', 'Info'),
+
     )
     # automatic models.AutoField(primary_key = True)
     title = models.CharField(max_length=120, blank=False, null=False)

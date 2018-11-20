@@ -72,90 +72,100 @@
         </div>
         <div class="menu-inner-wrapper menu-scroll">
             <div class="menu-group-wrapper">
-            {% block food %}
-                <div class="menu-group-header">
+                {% block food %}
+                    <div class="menu-group-header">
 						<span class="menu-group-symbol">
 							<i class="fa fa-sort-down" aria-hidden="true"></i>
 						</span>
-                    Food
-                </div>
+                        Food
+                    </div>
 
-                <div class="menu-group-body collapsed menu-scroll">
-                    {% for food_pin in food_pin_list %}
-                        <div class="menu-group-item v-center">
-                            <div class="icon-wrapper">
-                                <img src="{% static "images/icons/Food.png" %}" alt="{{ food_pin.category }}"><!-- TODO make the icons change automatically based on the category of the pin-->
+                    <div class="menu-group-body collapsed menu-scroll">
+                        {% for food_pin in food_pin_list %}
+                            <div class="menu-group-item v-center">
+                                <div class="icon-wrapper">
+                                    <img src="{% static "images/icons/Food.png" %}" alt="{{ food_pin.category }}">
+                                    <!-- TODO make the icons change automatically based on the category of the pin-->
+                                </div>
+                                <div>
+                                    {{ food_pin.title }}
+                                </div>
                             </div>
-                            <div>
-                                {{ food_pin.title }}
-                            </div>
-                        </div>
+                        {% endfor %}
+                    </div>
+                {% endblock %}
+            </div>
+            <div class="menu-group-wrapper">
+                {% block study %}
+                    <div class="menu-group-header">
+						<span class="menu-group-symbol">
+							<i class="fa fa-sort-down" aria-hidden="true"></i>
+						</span>
+                        Study
+                    </div>
 
-                    {% endfor %}
-                    {% endblock %}
-                </div>
+                    <div class="menu-group-body collapsed menu-scroll">
+                        {% for study_pin in study_pin_list %}
+                            <div class="menu-group-item v-center">
+                                <div class="icon-wrapper">
+                                    <img src="{% static "images/icons/Resources.png" %}" alt="{{ study_pin.category }}">
+                                    <!-- TODO make the icons change automatically based on the category of the pin-->
+                                </div>
+                                <div>
+                                    {{ study_pin.title }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endblock %}
             </div>
             <div class="menu-group-wrapper">
-                <div class="menu-group-header">
+                {% block parking %}
+                    <div class="menu-group-header">
 						<span class="menu-group-symbol">
 							<i class="fa fa-sort-down" aria-hidden="true"></i>
 						</span>
-                    Study
-                </div>
-                <div class="menu-group-body collapsed menu-scroll">
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Resources.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Test
-                        </div>
+                        parking
                     </div>
-                </div>
+
+                    <div class="menu-group-body collapsed menu-scroll">
+                        {% for parking_pin in parking_pin_list %}
+                            <div class="menu-group-item v-center">
+                                <div class="icon-wrapper">
+                                    <img src="{% static "images/icons/Parking.png" %}" alt="{{ parking_pin.category }}">
+                                    <!-- TODO make the icons change automatically based on the category of the pin-->
+                                </div>
+                                <div>
+                                    {{ parking_pin.title }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endblock %}
             </div>
             <div class="menu-group-wrapper">
-                <div class="menu-group-header">
+                {% block info %}
+                    <div class="menu-group-header">
 						<span class="menu-group-symbol">
 							<i class="fa fa-sort-down" aria-hidden="true"></i>
 						</span>
-                    Parking
-                </div>
-                <div class="menu-group-body collapsed menu-scroll">
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Parking.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Test
-                        </div>
+                        info
                     </div>
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Bike_Parking.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Test
-                        </div>
+
+                    <div class="menu-group-body collapsed menu-scroll">
+                        {% for info_pin in info_pin_list %}
+                            <div class="menu-group-item v-center">
+                                <div class="icon-wrapper">
+                                    <img src="{% static "images/icons/Resources.png" %}" alt="{{ info_pin.category }}">
+                                    <!-- TODO make the icons change automatically based on the category of the pin-->
+                                </div>
+                                <div>
+                                    {{ info_pin.title }}
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
-                </div>
-            </div>
-            <div class="menu-group-wrapper">
-                <div class="menu-group-header">
-						<span class="menu-group-symbol">
-							<i class="fa fa-sort-down" aria-hidden="true"></i>
-						</span>
-                    Info
-                </div>
-                <div class="menu-group-body collapsed menu-scroll">
-                    <div class="menu-group-item v-center">
-                        <div class="icon-wrapper">
-                            <img src="{% static "images/icons/Resources.png" %}" alt="Laze">
-                        </div>
-                        <div>
-                            Test
-                        </div>
-                    </div>
-                </div>
+                {% endblock %}
             </div>
         </div>
     </div>
