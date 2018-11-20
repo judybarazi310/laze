@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib.auth import login, authenticate
 
+
 def register(request):
 	if request.method == 'POST':
 		form = RegisterForm(request.POST)
@@ -18,6 +19,7 @@ def register(request):
 		form = RegisterForm()
 		
 	return render(request, 'register.html', {'form': form})
+
 
 def mapview(request):
 	return render(request, 'maps/maps.html')
