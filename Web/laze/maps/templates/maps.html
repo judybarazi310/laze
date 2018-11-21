@@ -212,6 +212,14 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPgjcP8oyWXlZUIpmxaU1pzT2pxXp4Ecc&callback=initMap">
 </script>
 <script>
+    var pinsToCreate = [];
+    '{% for info_pin in info_pin_list %}'
+        var pin = {title:'{{ info_pin.title }}', desc: '{{ info_pin.description }}', cat: '{{ info_pin.category }}', lat: '{{ info_pin.latitude }}', lng: '{{ info_pin.longitude }}'};
+        pinsToCreate.push(pin);
+    '{% endfor %}'
+</script>
+
+<script>
     var pinIcon = "{% static 'images/pin_icon.png' %}"
     var overlayUrl = "{% static 'images/wlu_map_big.png' %}";
 </script>

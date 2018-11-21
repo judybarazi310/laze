@@ -75,6 +75,11 @@ function initMap() {
     google.maps.event.addListener(map, 'zoom_changed', function() {
         if (map.getZoom() < minZoomLevel) map.setZoom(minZoomLevel);
     });
+    //create pins from server data
+    var i;
+    for (i = 0; i < pinsToCreate.length; i++){
+        createPin(pinsToCreate[i].title, pinsToCreate[i].desc, pinsToCreate[i].cat, {lat: Number(pinsToCreate[i].lat), lng: Number(pinsToCreate[i].lng)}, map);
+    }
 }
 
 function addOverlayClickListener(map, overlay) {
