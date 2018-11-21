@@ -80,6 +80,7 @@ function initMap() {
     for (i = 0; i < pinsToCreate.length; i++){
         createPin(pinsToCreate[i].title, pinsToCreate[i].desc, pinsToCreate[i].cat, {lat: Number(pinsToCreate[i].lat), lng: Number(pinsToCreate[i].lng)}, map);
     }
+    $('#id_title,#id_description').addClass('form-control');
 }
 
 function addOverlayClickListener(map, overlay) {
