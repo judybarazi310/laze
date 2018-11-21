@@ -41,8 +41,8 @@ function initMap() {
         mapTypeControl: false
     });
 
-    createPin("Tim Hortons", "text", tims, map);
-    createPin("Subway Bricker", "text", subway, map);
+    createPin("Tim Hortons", "text", "TESTING", tims, map);
+    createPin("Subway Bricker", "text", "TESTING", subway, map);
 
     let overlay = setOverlay(map);
     addOverlayClickListener(map, overlay);
@@ -74,26 +74,27 @@ function addOverlayClickListener(map, overlay) {
         $('.form-control').val('').removeClass('empty-input-field');
         $('#newPinDialog').modal('show');
         $('#newPinDialog .btn-primary').off().click(function() {
-            let location = $('#location-title').val();
-            let message = $('#message-text').val();
+            let location = $('#id_title').val();
+            let message = $('#id_description').val();
+            let category = $('#id_category').val();
             if (location === '' || message === '') {
                 $('.form-control').addClass('empty-input-field');
             } else {
                 $('#newPinDialog').modal('hide');
-                createPin(location, message, newCoordinates, map);
+                createPin(location, message, category, newCoordinates, map);
             }
         });
     });
 }
 
-function createPin(location, message, coordinates, map) {
+function createPin(location, message, category, coordinates, map) {
     let newMarker = new google.maps.Marker({
         position: coordinates,
         map: map,
         icon: pinIcon,
         title: location
     });
-    let newMarkerString = '<h1 style="font-family: Varela-Round; font-size:1.5rem">' + location + '</h1><br>' + '<p style="font-family: Varela-Round; font-size:1rem">' + message + '</p>';
+    let newMarkerString = '<h1 style="font-family: Varela-Round; font-size:1.5rem">' + location + '</h1><br>' + '<p style="font-family: Varela-Round; font-size:1rem">' + message + '</p>' + category;
     let newMarkerWindow = new google.maps.InfoWindow({
         content: newMarkerString,
         maxWidth: 200
