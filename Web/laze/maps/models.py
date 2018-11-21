@@ -36,3 +36,5 @@ class Pin(models.Model):
     @property
     def votes(self):
         return 5
+    def __str__(self):
+        return self.title
