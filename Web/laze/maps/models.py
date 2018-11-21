@@ -6,13 +6,13 @@ class Pin(models.Model):
     PIN_CATEGORIES = (
         ('INFO', 'Info'),
         ('FOOD', 'Food'),
+        ('VEHP', 'Parking'),
+        ('STY', 'Study'),
         ('Entertainment', (
             ('T', 'Theater'),
             ('M', 'Mall'),
         )
          ),
-        ('VEHP', 'Parking'),
-        ('STY', 'Study'),
         ('Recreational', (
             ('GYM', 'Gym'),
             ('POOL', 'Swimming Pool'),

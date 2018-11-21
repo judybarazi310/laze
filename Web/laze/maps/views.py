@@ -23,10 +23,10 @@ def maps_view(request, **kwargs):  # TODO create food_pin_list
         parking_pin_list = Pin.objects.filter(category="VEHP")
         info_pin_list = Pin.objects.filter(category="INFO")
         # temporary
-        all_pins = Pin.objects.all()
+        latlng_pins = Pin.objects.all().exclude(latitude="None")
 
         render_parameters = {'form': form, 'food_pin_list': food_pin_list, 'study_pin_list': study_pin_list,
-                             'parking_pin_list': parking_pin_list, 'info_pin_list': info_pin_list, 'all_pins': all_pins}
+                             'parking_pin_list': parking_pin_list, 'info_pin_list': info_pin_list, 'latlng_pins': latlng_pins}
 
         render_parameters["search_text"] = request.GET.get("search_text", None)
         if (render_parameters["search_text"] is not None):
