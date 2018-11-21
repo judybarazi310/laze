@@ -45,14 +45,6 @@ function initMap() {
     createPin("Tim Hortons", "text", "TESTING", tims, map);
     createPin("Subway Bricker", "text", "TESTING", subway, map);
 
-
-    // template_data.forEach((pin) => {
-    //     let newCoordinates = {lat: pin.latitude, lng: pin.longitude};
-    //     if (newCoordinates.lat !== null) {
-    //         createPin(pin.title, pin.description, newCoordinates, map);
-    //     }
-    // });
-
     let overlay = setOverlay(map);
     addOverlayClickListener(map, overlay);
     google.maps.event.addListener(map, 'dragend', function() {
