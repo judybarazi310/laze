@@ -70,134 +70,139 @@
 					<i class="fa fa-search" aria-hidden="true"></i>
 				</span>
         </div>
-        <div class="menu-inner-wrapper menu-scroll">
-            <div class="menu-group-wrapper">
-                {% block food %}
-                    <div class="menu-group-header">
+        {% if seach_text %}
+            <div class="menu-inner-wrapper menu-scroll" hidden = "True">
+        {% else %}
+            <div class="menu-inner-wrapper menu-scroll">
+        {% endif %}
+
+        <div class="menu-group-wrapper">
+            {% block food %}
+                <div class="menu-group-header">
 						<span class="menu-group-symbol">
 							<i class="fa fa-sort-down" aria-hidden="true"></i>
 						</span>
-                        Food
-                    </div>
+                    Food
+                </div>
 
-                    <div class="menu-group-body collapsed menu-scroll">
-                        {% for food_pin in food_pin_list %}
-                            <div class="menu-group-item v-center">
-                                <div class="icon-wrapper">
-                                    <img src="{% static "images/icons/Food.png" %}" alt="{{ food_pin.category }}">
-                                    <!-- TODO make the icons change automatically based on the category of the pin-->
-                                </div>
-                                <div>
-                                    {{ food_pin.title }}
-                                </div>
+                <div class="menu-group-body collapsed menu-scroll">
+                    {% for food_pin in food_pin_list %}
+                        <div class="menu-group-item v-center">
+                            <div class="icon-wrapper">
+                                <img src="{% static "images/icons/Food.png" %}" alt="{{ food_pin.category }}">
+                                <!-- TODO make the icons change automatically based on the category of the pin-->
                             </div>
-                        {% endfor %}
-                    </div>
-                {% endblock %}
-            </div>
-            <div class="menu-group-wrapper">
-                {% block study %}
-                    <div class="menu-group-header">
+                            <div>
+                                {{ food_pin.title }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endblock %}
+        </div>
+        <div class="menu-group-wrapper">
+            {% block study %}
+                <div class="menu-group-header">
 						<span class="menu-group-symbol">
 							<i class="fa fa-sort-down" aria-hidden="true"></i>
 						</span>
-                        Study
-                    </div>
+                    Study
+                </div>
 
-                    <div class="menu-group-body collapsed menu-scroll">
-                        {% for study_pin in study_pin_list %}
-                            <div class="menu-group-item v-center">
-                                <div class="icon-wrapper">
-                                    <img src="{% static "images/icons/Resources.png" %}" alt="{{ study_pin.category }}">
-                                    <!-- TODO make the icons change automatically based on the category of the pin-->
-                                </div>
-                                <div>
-                                    {{ study_pin.title }}
-                                </div>
+                <div class="menu-group-body collapsed menu-scroll">
+                    {% for study_pin in study_pin_list %}
+                        <div class="menu-group-item v-center">
+                            <div class="icon-wrapper">
+                                <img src="{% static "images/icons/Resources.png" %}" alt="{{ study_pin.category }}">
+                                <!-- TODO make the icons change automatically based on the category of the pin-->
                             </div>
-                        {% endfor %}
-                    </div>
-                {% endblock %}
-            </div>
-            <div class="menu-group-wrapper">
-                {% block parking %}
-                    <div class="menu-group-header">
+                            <div>
+                                {{ study_pin.title }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endblock %}
+        </div>
+        <div class="menu-group-wrapper">
+            {% block parking %}
+                <div class="menu-group-header">
 						<span class="menu-group-symbol">
 							<i class="fa fa-sort-down" aria-hidden="true"></i>
 						</span>
-                        parking
-                    </div>
+                    parking
+                </div>
 
-                    <div class="menu-group-body collapsed menu-scroll">
-                        {% for parking_pin in parking_pin_list %}
-                            <div class="menu-group-item v-center">
-                                <div class="icon-wrapper">
-                                    <img src="{% static "images/icons/Parking.png" %}" alt="{{ parking_pin.category }}">
-                                    <!-- TODO make the icons change automatically based on the category of the pin-->
-                                </div>
-                                <div>
-                                    {{ parking_pin.title }}
-                                </div>
+                <div class="menu-group-body collapsed menu-scroll">
+                    {% for parking_pin in parking_pin_list %}
+                        <div class="menu-group-item v-center">
+                            <div class="icon-wrapper">
+                                <img src="{% static "images/icons/Parking.png" %}" alt="{{ parking_pin.category }}">
+                                <!-- TODO make the icons change automatically based on the category of the pin-->
                             </div>
-                        {% endfor %}
-                    </div>
-                {% endblock %}
-            </div>
-            <div class="menu-group-wrapper">
-                {% block info %}
-                    <div class="menu-group-header">
+                            <div>
+                                {{ parking_pin.title }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endblock %}
+        </div>
+        <div class="menu-group-wrapper">
+            {% block info %}
+                <div class="menu-group-header">
 						<span class="menu-group-symbol">
 							<i class="fa fa-sort-down" aria-hidden="true"></i>
 						</span>
-                        info
-                    </div>
+                    info
+                </div>
 
-                    <div class="menu-group-body collapsed menu-scroll">
-                        {% for info_pin in info_pin_list %}
-                            <div class="menu-group-item v-center">
-                                <div class="icon-wrapper">
-                                    <img src="{% static "images/icons/Resources.png" %}" alt="{{ info_pin.category }}">
-                                    <!-- TODO make the icons change automatically based on the category of the pin-->
-                                </div>
-                                <div>
-                                    {{ info_pin.title }}
-                                </div>
+                <div class="menu-group-body collapsed menu-scroll">
+                    {% for info_pin in info_pin_list %}
+                        <div class="menu-group-item v-center">
+                            <div class="icon-wrapper">
+                                <img src="{% static "images/icons/Resources.png" %}" alt="{{ info_pin.category }}">
+                                <!-- TODO make the icons change automatically based on the category of the pin-->
                             </div>
-                        {% endfor %}
-                    </div>
-                {% endblock %}
-            </div>
+                            <div>
+                                {{ info_pin.title }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endblock %}
+        </div>
+        </div>
         </div>
     </div>
-</div>
 
-<!-- mapview js: -->
-<script src="{% static "maps/vendor/jquery/jquery-3.2.1.min.js" %}"></script>
-<script src="{% static "maps/js/mapview.js" %}"></script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPgjcP8oyWXlZUIpmxaU1pzT2pxXp4Ecc&callback=initMap">
-</script>
-<script>
-    var pinIcon = "{% static 'images/pin_icon.png' %}"
-    var overlayUrl = "{% static 'images/wlu_map_big.png' %}";
-</script>
+    <!-- mapview js: -->
+    <script src="{% static "maps/vendor/jquery/jquery-3.2.1.min.js" %}"></script>
+    <script src="{% static "maps/js/mapview.js" %}"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPgjcP8oyWXlZUIpmxaU1pzT2pxXp4Ecc&callback=initMap">
+    </script>
+    <script>
+        var pinIcon = "{% static 'images/pin_icon.png' %}"
+        var overlayUrl = "{% static 'images/wlu_map_big.png' %}";
+    </script>
 
-<!--===============================================================================================-->
+    <!--===============================================================================================-->
 
-<!--===============================================================================================-->
-<script src="{% static "maps/vendor/bootstrap/js/popper.js" %}"></script>
-<script src="{% static "maps/vendor/bootstrap/js/bootstrap.min.js" %}"></script>
-<!--===============================================================================================-->
-<script src="{% static "maps/vendor/select2/select2.min.js" %}"></script>
-<!--===============================================================================================-->
-<script src="{% static "maps/vendor/tilt/tilt.jquery.min.js" %}"></script>
-<script>
-    $('.js-tilt').tilt({
-        scale: 1.1
-    })
-</script>
-<!--===============================================================================================-->
-<script src="{% static "users/js/main.js" %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static "maps/vendor/bootstrap/js/popper.js" %}"></script>
+    <script src="{% static "maps/vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static "maps/vendor/select2/select2.min.js" %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static "maps/vendor/tilt/tilt.jquery.min.js" %}"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <!--===============================================================================================-->
+    <script src="{% static "users/js/main.js" %}"></script>
 
 
 </body>

@@ -8,7 +8,7 @@ from .models import Pin
 
 # Create your views here.
 
-def maps_view(request):  # TODO create food_pin_list
+def maps_view(request, **kwargs):  # TODO create food_pin_list
     if request.method == 'POST':
         form = PinForm(request.POST)
 
@@ -22,5 +22,11 @@ def maps_view(request):  # TODO create food_pin_list
         study_pin_list = Pin.objects.filter(category="STY")
         parking_pin_list = Pin.objects.filter(category="VEHP")
         info_pin_list = Pin.objects.filter(category="INFO")
-    return render(request, 'maps.html', {'form': form, 'food_pin_list': food_pin_list, 'study_pin_list': study_pin_list,
-                                         'parking_pin_list': parking_pin_list, 'info_pin_list': info_pin_list})
+
+        render_parameters = {'form': form, 'food_pin_list': food_pin_list, 'study_pin_list': study_pin_list,
+                             'parking_pin_list': parking_pin_list, 'info_pin_list': info_pin_list}
+
+        if(kwargs):
+            render_parameters["search_text"] = kwargs["str"]
+
+    return render(request, 'maps.html', render_parameters)
