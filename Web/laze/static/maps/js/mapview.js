@@ -100,6 +100,13 @@ function addOverlayClickListener(map, overlay) {
 }
 
 function createPin(location, message, category, coordinates, map) {
+    // change pin icon according to category
+    var pinIcon;
+    if (category == 'VEHP') pinIcon = parkingPinIcon;
+    else if (category == 'STY') pinIcon = studyPinIcon;
+    else if (category == 'FOOD') pinIcon  = foodPinIcon;
+    else pinIcon = defaultPinIcon;
+
     let newMarker = new google.maps.Marker({
         position: coordinates,
         map: map,
