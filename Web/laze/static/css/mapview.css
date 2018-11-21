@@ -75,10 +75,15 @@ html, body {
     position: absolute;
     right: 0;
     top: 0;
-    padding-right: 32px;
-    padding-top: 8px;
+    padding-right: 12px;
+    /* padding-left: 4px; */
+    margin-right: 16px;
+    height: 40px;
     cursor: pointer;
     color: #555555;
+    background-color: transparent;
+    border: none;
+    border-radius: 0px 16px 16px 0px;
 
     transition: 200ms;
     -webkit-transition: 200ms;
