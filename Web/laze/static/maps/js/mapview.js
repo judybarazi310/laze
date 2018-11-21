@@ -38,11 +38,20 @@ function initMap() {
         center: wlu,
         streetViewControl: false,
         fullscreenControl: false,
-        mapTypeControl: false
+        mapTypeControl: false,
+        zoomControl: true
     });
 
     createPin("Tim Hortons", "text", tims, map);
     createPin("Subway Bricker", "text", subway, map);
+
+
+    // template_data.forEach((pin) => {
+    //     let newCoordinates = {lat: pin.latitude, lng: pin.longitude};
+    //     if (newCoordinates.lat !== null) {
+    //         createPin(pin.title, pin.description, newCoordinates, map);
+    //     }
+    // });
 
     let overlay = setOverlay(map);
     addOverlayClickListener(map, overlay);
@@ -73,9 +82,14 @@ function addOverlayClickListener(map, overlay) {
         let newCoordinates = {lat: event.latLng.lat(), lng: event.latLng.lng()};
         $('.form-control').val('').removeClass('empty-input-field');
         $('#newPinDialog').modal('show');
+        
+        // Setting the value of latitude and longitude in the form
+        $('#id_longitude').val(newCoordinates.lng);
+        $('#id_latitude').val(newCoordinates.lat);
+       
         $('#newPinDialog .btn-primary').off().click(function() {
-            let location = $('#location-title').val();
-            let message = $('#message-text').val();
+            let location = $('#id_title').val();
+            let message = $('#id_description').val();
             if (location === '' || message === '') {
                 $('.form-control').addClass('empty-input-field');
             } else {
