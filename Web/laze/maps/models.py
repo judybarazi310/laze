@@ -4,6 +4,7 @@ from django.db import models
 # Create your models here.
 class Pin(models.Model):
     PIN_CATEGORIES = (
+        ('INFO', 'Info'),
         ('FOOD', 'Food'),
         ('Entertainment', (
             ('T', 'Theater'),
@@ -20,9 +21,7 @@ class Pin(models.Model):
             ('PARK', 'Parks'),
 
         )
-         ),
-        ('INFO', 'Info'),
-
+         )
     )
     # automatic models.AutoField(primary_key = True)
     title = models.CharField(max_length=120, blank=False, null=False)
@@ -30,7 +29,7 @@ class Pin(models.Model):
     num_votes = models.IntegerField(blank=False, default=0)
     time_created = models.DateTimeField(auto_now_add=True)
     time_updated = models.DateTimeField(auto_now=True)
-    category = models.CharField(max_length=4, choices=PIN_CATEGORIES, null=False)
+    category = models.CharField(max_length=4, choices=PIN_CATEGORIES, default= "INFO", null=False)
     latitude = models.TextField(null=False)#TODO change null to false
     longitude = models.TextField(null=False)#TODO change null to false
 
