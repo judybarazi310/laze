@@ -26,7 +26,8 @@ def maps_view(request, **kwargs):  # TODO create food_pin_list
         render_parameters = {'form': form, 'food_pin_list': food_pin_list, 'study_pin_list': study_pin_list,
                              'parking_pin_list': parking_pin_list, 'info_pin_list': info_pin_list}
 
-        if(kwargs):
-            render_parameters["search_text"] = kwargs["str"]
+        render_parameters["search_text"] = request.GET.get("search_text", None)
+        if (render_parameters["search_text"] is not None):
+            render_parameters["search_results"] = Pin.objects.filter(title__icontains=render_parameters["search_text"])
 
     return render(request, 'maps.html', render_parameters)

@@ -65,13 +65,37 @@
 <div class="menu-wrapper">
     <div class="menu-container ml-4 my-4">
         <div class="search-bar-wrapper v-center">
-            <input class="search-bar" type="text" placeholder="Where to?">
-            <span class="search-symbol">
-					<i class="fa fa-search" aria-hidden="true"></i>
-				</span>
+            <form type="get" action="/search/">
+                {% if search_text %}
+                    <input class="search-bar" name="search_text" type="text" value="{{ search_text }}">
+                {% else %}
+                    <input class="search-bar" name="search_text" type="text" placeholder="Where to?">
+                {% endif %}
+                <button id="search_submit" type="submit" class="search-symbol">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
         </div>
-        {% if seach_text %}
-            <div class="menu-inner-wrapper menu-scroll" hidden = "True">
+
+        {% block search_results_area %}
+            {% for search_result in search_results %}
+                <div class="menu-group-item v-center">
+                    <div class="icon-wrapper">
+                        <img src="{% static "images/icons/Resources.png" %}" alt="{{ search_result.category }}">
+                        <!-- TODO make the icons change automatically based on the category of the pin-->
+                    </div>
+                    <div>
+                        {{ search_result.title }}
+                    </div>
+                </div>
+            {% endfor %}
+
+
+        {% endblock %}
+
+
+        {% if search_text %}
+            <div class="menu-inner-wrapper menu-scroll" hidden="True">
         {% else %}
             <div class="menu-inner-wrapper menu-scroll">
         {% endif %}
