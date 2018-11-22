@@ -65,9 +65,11 @@ function initMap() {
 
      map.setCenter(new google.maps.LatLng(y, x));
     });
-    google.maps.event.addListener(map, 'zoom_changed', function() {
-        if (map.getZoom() < minZoomLevel) map.setZoom(minZoomLevel);
-    });
+    // TODO: define minZoomLevel
+    // google.maps.event.addListener(map, 'zoom_changed', function() {
+    //     if (map.getZoom() < minZoomLevel) map.setZoom(minZoomLevel);
+    // });
+    
     //create pins from server data
     var i;
     for (i = 0; i < pinsToCreate.length; i++){
@@ -79,7 +81,7 @@ function initMap() {
 function addOverlayClickListener(map, overlay) {
     overlay.addListener('click', (event) => {
         let newCoordinates = {lat: event.latLng.lat(), lng: event.latLng.lng()};
-        $('.form-control').val('').removeClass('empty-input-field');
+        $('.form-control').val('');
         $('#newPinDialog').modal('show');
         
         // Setting the value of latitude and longitude in the form
@@ -90,9 +92,7 @@ function addOverlayClickListener(map, overlay) {
             let location = $('#id_title').val();
             let message = $('#id_description').val();
             let category = $('#id_category').val();
-            if (location === '' || message === '') {
-                $('.form-control').addClass('empty-input-field');
-            } else {
+            if (location !== '') {
                 $('#newPinDialog').modal('hide');
                 createPin(location, message, category, newCoordinates, map);
             }
@@ -104,7 +104,7 @@ function createPin(location, message, category, coordinates, map) {
     // change pin icon according to category
     var pinIcon;
     if (category == 'VEHP') { pinIcon = parkingPinIcon; category = 'Parking';}
-    else if (category == 'STY') { pinIcon = studyPinIcon, category = 'Study';}
+    else if (category == 'STY') { pinIcon = studyPinIcon; category = 'Study';}
     else if (category == 'FOOD') { pinIcon  = foodPinIcon; category = 'Food';}
     else {pinIcon = defaultPinIcon; category = 'Info';}
 
