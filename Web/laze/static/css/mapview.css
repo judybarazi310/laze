@@ -119,6 +119,7 @@ html, body {
     transition: 0.3s ease-out;
     height: auto;
     max-height: 256px;
+    max-width: 256px;
     padding: 0 0 8px 22px;
 }
 
@@ -203,16 +204,21 @@ html, body {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
+    position: relative;
 }
 
 .button-white {
-    background-color: transparent; 
-    color: #272727; 
-    border: 2px solid #272727;
+    background-color:#F1F3F8; 
+    color: #555555; 
+    border: none;
+    font-size: 12px;
+    display: flex;
+    align-items: right;
+    margin-left: auto;
 }
 
 .button-white:hover {
-    background-color: #272727;
+    background-color: #320071;
     color: #f2f2f2;
     text-decoration: none
 }

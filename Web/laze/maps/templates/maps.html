@@ -117,7 +117,7 @@
                             <div>
                                 {{ food_pin.title }}
                             </div>
-                            <!-- TODO Format button alignment, design the view when a user clicks a pin, show more information like google maps -->
+                            <!-- TODO Design the view when a user clicks a pin, show more information like google maps -->
                             {% if request.user.is_superuser %}
                             <a class="button button-white" href="{% url 'delete_pin' food_pin.id %}">Delete</a>
                             {% endif %}
