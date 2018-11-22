@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.conf import settings
 
 # Create your models here.
 class Pin(models.Model):
@@ -32,7 +32,7 @@ class Pin(models.Model):
     category = models.CharField(max_length=4, choices=PIN_CATEGORIES, default= "INFO", null=False)
     latitude = models.TextField(null=False)#TODO change null to false
     longitude = models.TextField(null=False)#TODO change null to false
-
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     @property
     def votes(self):

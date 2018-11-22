@@ -7,11 +7,13 @@ from .models import Pin
 # Create your views here.
 
 def maps_view(request, **kwargs):  # TODO create food_pin_list
-    if request.method == 'POST':
+    if request.method == 'POST' and request.user.is_authenticated:
         form = PinForm(request.POST)
-        
+
         if form.is_valid():
-            form.save()
+            model=form.save(commit=False)
+            model.created_by = request.user
+            model.save()
             return redirect('/')
 
     else:
