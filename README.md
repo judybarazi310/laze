@@ -1,3 +1,4 @@
+# ON FRI, NOV 23, I will demonstrate the following in the meeting using WINDOWS #
 ## For those who don't know how to run our project locally and would like to see what it looks like right now, in 'Web/laze', there is a file named 'manage.py' that you can run using your virtual environment. At the end, I will demonstrate using my folder structure using Git Bash. ##
 
 #### 1. Make sure you have the correct version of Django installed, version 2.1.2 in your virtual environment. ####
