@@ -1,103 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Laze Login</title>
-	<meta charset="UTF-8">
-
-	{% load static %}
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="{% static "images/icons/Map Pin Icon.png" %}"/>
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static "fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static "vendor/animate/animate.css" %}">
-	<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{% static "vendor/css-hamburgers/hamburgers.min.css" %}">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static "vendor/select2/select2.min.css" %}">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static "css/util.css" %}">
-	<link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
-	<!--===============================================================================================-->
-</head>
-<body>
-	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-
-				<form class="login100-form validate-form" method="post">{% csrf_token %}
-					<div class="login100-pic js-tilt" data-tilt>
-						<img src="{% static "images/Laze Logo.png" %}" alt="Laze">
-					</div>
-
-					<div style="color: red;">{{ form.non_field_errors }}</div>
-
-					<br>
-
-					<div class="wrap-input100 validate-input" data-validate = "Username is required">
-						<p> {{ form.username.errors }}</p>
-						<input class="input100" id="{{ form.username.id_for_label }}" type="text" name="{{ form.username.html_name }}" placeholder="Username">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-user" aria-hidden="true"></i>
-						</span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						{{ form.password.errors }}
-						<input class="input100" id="{{ form.password.id_for_label }}" type="password" name="{{ form.password.html_name }}" placeholder="Password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-					</div>
-					
-					<div class="text-left fs-13 p-t-5 text-white">
-						<input type="checkbox">
-						Remember me
-						<span class="checkmark"></span>
-					</div>
-
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" type = "submit">
-							Login
-						</button>
-					</div>
-
-					<div class="text-center p-t-12">
-						<a class="txt1" href="{% url 'reset' %}">
-							Forgot Username/Password
-						</a>
-						<a class="txt2" href="/accounts/register">
-							Register
-						</a>
-					</div>
-				</form>
-			</div>
-		</div>
+{% extends 'base.html' %}
+{% block info %}
+	<div style="color: red;">{{ form.non_field_errors }}</div>
+	<br>
+	<div class="wrap-input100 validate-input" data-validate = "Username is required">
+		<p> {{ form.username.errors }}</p>
+		<input class="input100" id="{{ form.username.id_for_label }}" type="text" name="{{ form.username.html_name }}" placeholder="Username">
+		<span class="focus-input100"></span>
+		<span class="symbol-input100">
+			<i class="fa fa-user" aria-hidden="true"></i>
+		</span>
 	</div>
 
-	<!--===============================================================================================-->	
-	<script src="{% static "users/vendor/jquery/jquery-3.2.1.min.js" %}"></script>
-	<!--===============================================================================================-->
-	<script src="{% static "users/vendor/bootstrap/js/popper.js" %}"></script>
-	<script src="{% static "users/vendor/bootstrap/js/bootstrap.min.js" %}"></script>
-	<!--===============================================================================================-->
-	<script src="{% static "users/vendor/select2/select2.min.js" %}"></script>
-	<!--===============================================================================================-->
-	<script src="{% static "users/vendor/tilt/tilt.jquery.min.js" %}"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-	<!--===============================================================================================-->
-	<script src="{% static "users/js/main.js" %}"></script>
+	<div class="wrap-input100 validate-input" data-validate = "Password is required">
+		{{ form.password.errors }}
+		<input class="input100" id="{{ form.password.id_for_label }}" type="password" name="{{ form.password.html_name }}" placeholder="Password">
+		<span class="focus-input100"></span>
+		<span class="symbol-input100">
+			<i class="fa fa-lock" aria-hidden="true"></i>
+		</span>
+	</div>
 
-</body>
-</html>
+	<div class="text-left fs-13 p-t-5 text-white">
+		<input type="checkbox">
+		Remember me
+		<span class="checkmark"></span>
+	</div>
+
+	<div class="container-login100-form-btn">
+		<button class="login100-form-btn" type = "submit">
+			Login
+		</button>
+	</div>
+
+	<div class="text-center p-t-12">
+		<a class="txt1" href="{% url 'reset' %}">
+			Forgot Username/Password
+		</a>
+		<a class="txt2" href="/accounts/register">
+			Register
+		</a>
+		<a class="login100-form-btn" href="/">
+			Go to Map
+		</a>
+	</div>
+{% endblock %}

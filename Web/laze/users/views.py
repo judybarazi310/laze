@@ -18,4 +18,4 @@ def register(request):
     else:
         form = RegisterForm()
 
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'register.html', {'form': form, 'title': 'Laze Registration'})

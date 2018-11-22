@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
 from maps import views
 
 urlpatterns = [
     path('accounts/', include('users.urls')),
     path('admin/', admin.site.urls, name="admin_page"),
     path('search/', views.maps_view, name="map_page"),
+    url(r'^delete/id=(?P<id>[\d]+)', views.delete_pin, name="delete_pin"),
     path('', views.maps_view, name="map_page"),
 ]

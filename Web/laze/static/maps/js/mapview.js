@@ -42,8 +42,8 @@ function initMap() {
         zoomControl: true
     });
 
-    createPin("Tim Hortons", "text", "TESTING", tims, map);
-    createPin("Subway Bricker", "text", "TESTING", subway, map);
+    // createPin("Tim Hortons", "text", "TESTING", tims, map);
+    // createPin("Subway Bricker", "text", "TESTING", subway, map);
 
     let overlay = setOverlay(map);
     addOverlayClickListener(map, overlay);

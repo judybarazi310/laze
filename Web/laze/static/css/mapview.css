@@ -190,3 +190,41 @@ html, body {
 .empty-input-field {
     border-color: red;
 }
+
+.button {
+    border: none;
+    border-radius:5px;
+    text-decoration: none;
+    padding: 3px 6px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button-white {
+    background-color: transparent; 
+    color: #272727; 
+    border: 2px solid #272727;
+}
+
+.button-white:hover {
+    background-color: #272727;
+    color: #f2f2f2;
+    text-decoration: none
+}
+
+.button-dark {
+    background-color: transparent; 
+    color: #f2f2f2; 
+    border: 2px solid #f2f2f2;
+}
+
+.button-dark:hover {
+    background-color: #f2f2f2;
+    color: #272727;
+    text-decoration: none
+}
