@@ -6,6 +6,7 @@
 // https://developers.google.com/maps/documentation/javascript/examples/map-simple
 
 var markers = [];
+var infowindows = [];
 
 function toggleMenuGroup(event) {
     $(event.target).parent().children(".menu-group-body").each((i, child) => {
@@ -102,10 +103,10 @@ function addOverlayClickListener(map, overlay) {
 function createPin(location, message, category, coordinates, map) {
     // change pin icon according to category
     var pinIcon;
-    if (category == 'VEHP') pinIcon = parkingPinIcon;
-    else if (category == 'STY') pinIcon = studyPinIcon;
-    else if (category == 'FOOD') pinIcon  = foodPinIcon;
-    else pinIcon = defaultPinIcon;
+    if (category == 'VEHP') { pinIcon = parkingPinIcon; category = 'Parking';}
+    else if (category == 'STY') { pinIcon = studyPinIcon, category = 'Study';}
+    else if (category == 'FOOD') { pinIcon  = foodPinIcon; category = 'Food';}
+    else {pinIcon = defaultPinIcon; category = 'Info';}
 
     let newMarker = new google.maps.Marker({
         position: coordinates,
@@ -119,9 +120,11 @@ function createPin(location, message, category, coordinates, map) {
         maxWidth: 200
     });
     newMarker.addListener('click', () => {
+        for (var i = 0; i < infowindows.length; i++ ) infowindows[i].close();
         newMarkerWindow.open(map, newMarker);
     });
     markers.push(newMarker);
+    infowindows.push(newMarkerWindow);
 }
 
 function setOverlay(map){
