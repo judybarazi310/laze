@@ -33,6 +33,7 @@ class Pin(models.Model):
     latitude = models.TextField(null=False)#TODO change null to false
     longitude = models.TextField(null=False)#TODO change null to false
 
+
     @property
     def votes(self):
         return 5
