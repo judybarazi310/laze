@@ -143,3 +143,42 @@ function setOverlay(map){
 }
 
 createMenuGroupListeners();
+
+function saveLocation(position) {
+    $.ajaxSetup({
+        headers: { "X-CSRFToken": getCookie("csrftoken") }
+    });
+
+    let url = window.location.origin + '/save-location/';
+    let data = {
+        'latitude': position.coords.latitude,
+        'longitude': position.coords.longitude
+    }
+
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: data,
+        dataType: 'json'
+    });
+}
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(saveLocation);
+}
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
