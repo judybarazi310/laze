@@ -37,6 +37,7 @@ def maps_view(request, **kwargs):  # TODO create food_pin_list
         render_parameters["search_text"] = request.GET.get("search_text", None)
         if (render_parameters["search_text"] is not None):
             render_parameters["search_results"] = Pin.objects.filter(title__icontains=render_parameters["search_text"])
+            return redirect('/')
 
     return render(request, 'maps.html', render_parameters)
 
