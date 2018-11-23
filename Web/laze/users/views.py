@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
-from django.contrib.auth import login, authenticate
-
+from django.contrib.auth import login, authenticate, logout as logout_function
+from maps.models import UserLocation
 
 def register(request):
     if request.method == 'POST':
@@ -19,3 +19,14 @@ def register(request):
         form = RegisterForm()
 
     return render(request, 'register.html', {'form': form, 'title': 'Laze Registration'})
+
+def logout(request):
+    if request.user.is_authenticated:
+        users = UserLocation.objects.filter(user=request.user)
+        
+        if users.exists():
+            users.delete()
+
+        logout_function(request)
+
+    return redirect('/accounts/login')

@@ -10,9 +10,6 @@ def calculate_nearby(locations, pins):
 
 		pin.save(update_fields=['people_nearby'])
 
-	for pin in pins:
-		print('peeps: ' + str(pin.people_nearby))
-
 def distance(location, pin):
 	radius = 6371000
 
@@ -26,7 +23,5 @@ def distance(location, pin):
 	c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
 	d = radius * c
-
-	print('distance: ' + str(d))
 
 	return d

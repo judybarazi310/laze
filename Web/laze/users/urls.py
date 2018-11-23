@@ -1,12 +1,12 @@
 from django.conf.urls import url
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-from .views import register
+from .views import register, logout
 
 urlpatterns = [
     url(r'^login/$', auth_views.LoginView.as_view(template_name='login.html',
     extra_context = {'title' : 'Laze Login'}), name="login"),
-    url(r'^logout/$', auth_views.LogoutView.as_view(extra_context = {'title' : 'Laze Logout'})),
+    url(r'^logout/$', logout),
     url(r'^register/$', register),
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
