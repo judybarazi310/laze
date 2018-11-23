@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Laze Map View</title>
     <meta charset="UTF-8">
@@ -7,7 +8,7 @@
     {% load static %}
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="{% static 'images/icons/Map Pin Icon.png' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'images/icons/Map Pin Icon.png' %}" />
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{% static 'maps/vendor/bootstrap/css/bootstrap.min.css' %}">
     <!--===============================================================================================-->
@@ -25,26 +26,27 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/mapview.css' %}">
     <!--===============================================================================================-->
 </head>
+
 <body>
 
-<div class="logo-wrapper">
-    <img src="{% static 'images/Laze Logo.png' %}" alt="Laze">
-</div>
+    <div class="logo-wrapper">
+        <img src="{% static 'images/Laze Logo.png' %}" alt="Laze">
+    </div>
 
 
-<div class="modal fade" id="newPinDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Submit a new pin</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+    <div class="modal fade" id="newPinDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Submit a new pin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
 
-            {% block content %}
-                {%  if request.user.is_authenticated  %}
+                {% block content %}
+                {% if request.user.is_authenticated %}
                 <div class="modal-body">
                     <form method="post" class="post-form">
                         {% csrf_token %}
@@ -58,186 +60,184 @@
                 </div>
                 {% else %}
 
-            <form type="get" action="/accounts/login/">
-                <p> Login to create a pin</p>
-                <button id="login" type="submit" class="btn btn-primary">
-                    Login
-                </button>
-            </form>
+                <form type="get" action="/accounts/login/">
+                    <p> Login to create a pin</p>
+                    <button id="login" type="submit" class="btn btn-primary">
+                        Login
+                    </button>
+                </form>
                 {% endif %}
-            {% endblock %}
+                {% endblock %}
+            </div>
         </div>
     </div>
-</div>
-<div class="limiter">
-    <div id="map"></div>
-</div>
+    <div class="limiter">
+        <div id="map"></div>
+    </div>
 
-<div class="menu-wrapper">
-    <div class="menu-container ml-4 my-4">
-        <div class="search-bar-wrapper v-center">
-            <form type="get" action="/search/">
-                {% if search_text %}
+    <div class="menu-wrapper">
+        <div class="menu-container ml-4 my-4">
+            <div class="search-bar-wrapper v-center">
+                <form type="get" action="/search/">
+                    {% if search_text %}
                     <input class="search-bar" name="search_text" type="text" value="{{ search_text }}">
-                {% else %}
+                    {% else %}
                     <input class="search-bar" name="search_text" type="text" placeholder="Where to?">
-                {% endif %}
-                <button id="search_submit" type="submit" class="search-symbol">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-            </form>
-        </div>
+                    {% endif %}
+                    <button id="search_submit" type="submit" class="search-symbol">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
 
-        {% block search_results_area %}
+            {% block search_results_area %}
             {% for search_result in search_results %}
-                <div class="menu-group-item v-center">
-                    <div class="icon-wrapper">
-                        <img src="{% static 'images/icons/Resources.png' %}" alt="{{ search_result.category }}">
-                        <!-- TODO make the icons change automatically based on the category of the pin-->
-                    </div>
-                    <div>
-
-                        {{ search_result.title }}
-                    </div>
+            <div class="menu-group-item v-center">
+                <div class="icon-wrapper">
+                    <img src="{% static 'images/icons/Resources.png' %}" alt="{{ search_result.category }}">
+                    <!-- TODO make the icons change automatically based on the category of the pin-->
                 </div>
+                <div>
+
+                    {{ search_result.title }}
+                </div>
+            </div>
             {% endfor %}
-        {% endblock %}
-
-        {% if search_text %}
-            <div class="menu-inner-wrapper menu-scroll" hidden="True">
-        {% else %}
-            <div class="menu-inner-wrapper menu-scroll">
-        {% endif %}
-
-        <div class="menu-group-wrapper">
-            {% block food %}
-                <div class="menu-group-header">
-						<span class="menu-group-symbol">
-							<i class="fa fa-sort-down" aria-hidden="true"></i>
-						</span>
-                    Food
-                </div>
-
-                <div class="menu-group-body collapsed menu-scroll">
-                    {% for food_pin in food_pin_list %}
-                        <div class="menu-group-item v-center">
-                            <div class="icon-wrapper">
-                                <img src="{% static 'images/icons/Food.png' %}" alt="{{ food_pin.category }}">
-                                <!-- TODO make the icons change automatically based on the category of the pin-->
-                            </div>
-                            <div>
-                                {{ food_pin.title }}
-                            </div>
-                            <!-- TODO Design the view when a user clicks a pin, show more information like google maps -->
-                            {% if request.user.is_superuser %}
-                                <a class="button button-white" href="{% url 'maps:delete_pin' food_pin.id %}">Delete</a>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
-                </div>
             {% endblock %}
-        </div>
 
-        <div class="menu-group-wrapper">
-            {% block study %}
-                <div class="menu-group-header">
+            {% if search_text %}
+            <div class="menu-inner-wrapper menu-scroll" hidden="True">
+                {% else %}
+                <div class="menu-inner-wrapper menu-scroll">
+                    {% endif %}
+
+                    <div class="menu-group-wrapper">
+                        {% block food %}
+                        <div class="menu-group-header">
                             <span class="menu-group-symbol">
                                 <i class="fa fa-sort-down" aria-hidden="true"></i>
                             </span>
-                    Study
-                </div>
+                            Food
+                        </div>
 
-                <div class="menu-group-body collapsed menu-scroll">
-                    {% for study_pin in study_pin_list %}
-                        <div class="menu-group-item v-center">
-                            <div class="icon-wrapper">
-                                <img src="{% static 'images/icons/Resources.png' study_pin.id %}"
-                                     alt="{{ study_pin.category }}">
-                                <!-- TODO make the icons change automatically based on the category of the pin-->
+                        <div class="menu-group-body collapsed menu-scroll">
+                            {% for food_pin in food_pin_list %}
+                            <div class="menu-group-item v-center">
+                                <div class="icon-wrapper">
+                                    <img src="{% static 'images/icons/Food.png' %}" alt="{{ food_pin.category }}">
+                                    <!-- TODO make the icons change automatically based on the category of the pin-->
+                                </div>
+                                <div>
+                                    {{ food_pin.title }}
+                                </div>
+                                <!-- TODO Design the view when a user clicks a pin, show more information like google maps -->
+                                {% if request.user.is_superuser %}
+                                <a class="button button-white" href="{% url 'maps:delete_pin' food_pin.id %}">Delete</a>
+                                {% endif %}
                             </div>
-                            <div>
-                                {{ study_pin.title }}
-                            </div>
-                            <!-- TODO Format button alignment, design the view when a user clicks a pin, show more information like google maps -->
-                            {% if request.user.is_superuser %}
+                            {% endfor %}
+                        </div>
+                        {% endblock %}
+                    </div>
+
+                    <div class="menu-group-wrapper">
+                        {% block study %}
+                        <div class="menu-group-header">
+                            <span class="menu-group-symbol">
+                                <i class="fa fa-sort-down" aria-hidden="true"></i>
+                            </span>
+                            Study
+                        </div>
+
+                        <div class="menu-group-body collapsed menu-scroll">
+                            {% for study_pin in study_pin_list %}
+                            <div class="menu-group-item v-center">
+                                <div class="icon-wrapper">
+                                    <img src="{% static 'images/icons/Resources.png' study_pin.id %}" alt="{{ study_pin.category }}">
+                                    <!-- TODO make the icons change automatically based on the category of the pin-->
+                                </div>
+                                <div>
+                                    {{ study_pin.title }}
+                                </div>
+                                <!-- TODO Format button alignment, design the view when a user clicks a pin, show more information like google maps -->
+                                {% if request.user.is_superuser %}
                                 <a class="button button-white" href="{% url 'maps:delete_pin' study_pin.id %}">Delete</a>
-                            {% endif %}
+                                {% endif %}
+                            </div>
+                            {% endfor %}
                         </div>
-                    {% endfor %}
-                </div>
-            {% endblock %}
+                        {% endblock %}
 
-        </div>
-        <div class="menu-group-wrapper">
-            {% block parking %}
-                <div class="menu-group-header">
-						<span class="menu-group-symbol">
-							<i class="fa fa-sort-down" aria-hidden="true"></i>
-						</span>
-                    Parking
-                </div>
+                    </div>
+                    <div class="menu-group-wrapper">
+                        {% block parking %}
+                        <div class="menu-group-header">
+                            <span class="menu-group-symbol">
+                                <i class="fa fa-sort-down" aria-hidden="true"></i>
+                            </span>
+                            Parking
+                        </div>
 
-                <div class="menu-group-body collapsed menu-scroll">
-                    {% for parking_pin in parking_pin_list %}
-                        <div class="menu-group-item v-center">
-                            <div class="icon-wrapper">
-                                <img src="{% static 'images/icons/Parking.png' %}" alt="{{ parking_pin.category }}">
-                                <!-- TODO make the icons change automatically based on the category of the pin-->
-                            </div>
-                            <div>
-                                {{ parking_pin.title }}
-                            </div>
-                            <!-- TODO Format button alignment, design the view when a user clicks a pin, show more information like google maps -->
-                            {% if request.user.is_superuser %}
+                        <div class="menu-group-body collapsed menu-scroll">
+                            {% for parking_pin in parking_pin_list %}
+                            <div class="menu-group-item v-center">
+                                <div class="icon-wrapper">
+                                    <img src="{% static 'images/icons/Parking.png' %}" alt="{{ parking_pin.category }}">
+                                    <!-- TODO make the icons change automatically based on the category of the pin-->
+                                </div>
+                                <div>
+                                    {{ parking_pin.title }}
+                                </div>
+                                <!-- TODO Format button alignment, design the view when a user clicks a pin, show more information like google maps -->
+                                {% if request.user.is_superuser %}
                                 <a class="button button-white" href="{% url 'maps:delete_pin' parking_pin.id %}">Delete</a>
-                            {% endif %}
+                                {% endif %}
+                            </div>
+                            {% endfor %}
                         </div>
-                    {% endfor %}
-                </div>
-            {% endblock %}
-        </div>
-        <div class="menu-group-wrapper">
-            {% block info %}
-                <div class="menu-group-header">
-						<span class="menu-group-symbol">
-							<i class="fa fa-sort-down" aria-hidden="true"></i>
-						</span>
-                    Info
-                </div>
+                        {% endblock %}
+                    </div>
+                    <div class="menu-group-wrapper">
+                        {% block info %}
+                        <div class="menu-group-header">
+                            <span class="menu-group-symbol">
+                                <i class="fa fa-sort-down" aria-hidden="true"></i>
+                            </span>
+                            Info
+                        </div>
 
-                <div class="menu-group-body collapsed menu-scroll">
-                    {% for info_pin in info_pin_list %}
-                        <div class="menu-group-item v-center">
-                            <div class="icon-wrapper">
-                                <img src="{% static 'images/icons/pin_icons/pin_icon.png' %}" alt="{{ info_pin.category }}">
-                                <!-- TODO make the icons change automatically based on the category of the pin-->
-                            </div>
-                            <div>
-                                {{ info_pin.title }}
-                            </div>
-                            <!-- TODO Format button alignment, design the view when a user clicks a pin, show more information like google maps -->
-                            {% if request.user.is_superuser %}
+                        <div class="menu-group-body collapsed menu-scroll">
+                            {% for info_pin in info_pin_list %}
+                            <div class="menu-group-item v-center">
+                                <div class="icon-wrapper">
+                                    <img src="{% static 'images/icons/pin_icons/pin_icon.png' %}" alt="{{ info_pin.category }}">
+                                    <!-- TODO make the icons change automatically based on the category of the pin-->
+                                </div>
+                                <div>
+                                    {{ info_pin.title }}
+                                </div>
+                                <!-- TODO Format button alignment, design the view when a user clicks a pin, show more information like google maps -->
+                                {% if request.user.is_superuser %}
                                 <a class="button button-white" href="{% url 'maps:delete_pin' info_pin.id %}">Delete</a>
-                            {% endif %}
+                                {% endif %}
+                            </div>
+                            {% endfor %}
                         </div>
-                    {% endfor %}
+                        {% endblock %}
+                    </div>
                 </div>
-            {% endblock %}
+            </div>
         </div>
-        </div>
-        </div>
-    </div>
 
-    <!-- mapview js: -->
-    <script src="{% static 'maps/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-    <script src="{% static 'maps/js/mapview.js' %}"></script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPgjcP8oyWXlZUIpmxaU1pzT2pxXp4Ecc&callback=initMap">
-    </script>
-    <script>
-        // add pin objects from db to global variable
-        var pinsToCreate = [];
-        '{% for pin in latlng_pins %}'
+        <!-- mapview js: -->
+        <script src="{% static 'maps/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'maps/js/mapview.js' %}"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPgjcP8oyWXlZUIpmxaU1pzT2pxXp4Ecc&callback=initMap">
+        </script>
+        <script>
+            // add pin objects from db to global variable
+            var pinsToCreate = [];
+            '{% for pin in latlng_pins %}'
             var pin = {
                 title: '{{ pin.title }}',
                 desc: '{{ pin.description }}',
@@ -249,36 +249,37 @@
             '{% endfor %}'
 
 
-    </script>
+        </script>
 
-    <script>
-        // pin icons urls
-        var defaultPinIcon = "{% static 'images/icons/pin_icons/pin_icon.png' %}"
-        var parkingPinIcon = "{% static 'images/icons/pin_icons/parking_Pin_open.png' %}"
-        var studyPinIcon = "{% static 'images/icons/pin_icons/study_Pin_open.png' %}"
-        var foodPinIcon = "{% static 'images/icons/pin_icons/food_Pin_open.png' %}"
-        var overlayUrl = "{% static 'images/wlu_map_big.png' %}";
-
-
-    </script>
-    <!--===============================================================================================-->
-
-    <!--===============================================================================================-->
-    <script src="{% static 'maps/vendor/bootstrap/js/popper.js' %}"></script>
-    <script src="{% static 'maps/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-    <!--===============================================================================================-->
-    <script src="{% static 'maps/vendor/select2/select2.min.js' %}"></script>
-    <!--===============================================================================================-->
-    <script src="{% static 'maps/vendor/tilt/tilt.jquery.min.js' %}"></script>
-    <script>
-        $('.js-tilt').tilt({
-            scale: 1.1
-        })
+        <script>
+            // pin icons urls
+            var defaultPinIcon = "{% static 'images/icons/pin_icons/pin_icon.png' %}"
+            var parkingPinIcon = "{% static 'images/icons/pin_icons/parking_Pin_open.png' %}"
+            var studyPinIcon = "{% static 'images/icons/pin_icons/study_Pin_open.png' %}"
+            var foodPinIcon = "{% static 'images/icons/pin_icons/food_Pin_open.png' %}"
+            var overlayUrl = "{% static 'images/wlu_map_big.png' %}";
 
 
-    </script>
-    <!--===============================================================================================-->
-    <script src="{% static 'users/js/main.js' %}"></script>
+        </script>
+        <!--===============================================================================================-->
+
+        <!--===============================================================================================-->
+        <script src="{% static 'maps/vendor/bootstrap/js/popper.js' %}"></script>
+        <script src="{% static 'maps/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'maps/vendor/select2/select2.min.js' %}"></script>
+        <!--===============================================================================================-->
+        <script src="{% static 'maps/vendor/tilt/tilt.jquery.min.js' %}"></script>
+        <script>
+            $('.js-tilt').tilt({
+                scale: 1.1
+            })
+
+
+        </script>
+        <!--===============================================================================================-->
+        <script src="{% static 'maps/js/main.js' %}"></script>
 
 </body>
+
 </html>

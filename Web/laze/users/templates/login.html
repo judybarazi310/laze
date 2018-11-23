@@ -1,46 +1,48 @@
 {% extends 'base.html' %}
 {% block info %}
-	<div style="color: red;">{{ form.non_field_errors }}</div>
-	<br>
-	<div class="wrap-input100 validate-input" data-validate = "Username is required">
-		<p> {{ form.username.errors }}</p>
-		<input class="input100" id="{{ form.username.id_for_label }}" type="text" name="{{ form.username.html_name }}" placeholder="Username">
-		<span class="focus-input100"></span>
-		<span class="symbol-input100">
-			<i class="fa fa-user" aria-hidden="true"></i>
-		</span>
-	</div>
+<div style="color: red;">{{ form.non_field_errors }}</div>
+<br>
+<div class="wrap-input100 validate-input" data-validate="Username is required">
+	<p> {{ form.username.errors }}</p>
+	<input class="input100" id="{{ form.username.id_for_label }}" type="text" name="{{ form.username.html_name }}"
+	 placeholder="Username">
+	<span class="focus-input100"></span>
+	<span class="symbol-input100">
+		<i class="fa fa-user" aria-hidden="true"></i>
+	</span>
+</div>
 
-	<div class="wrap-input100 validate-input" data-validate = "Password is required">
-		{{ form.password.errors }}
-		<input class="input100" id="{{ form.password.id_for_label }}" type="password" name="{{ form.password.html_name }}" placeholder="Password">
-		<span class="focus-input100"></span>
-		<span class="symbol-input100">
-			<i class="fa fa-lock" aria-hidden="true"></i>
-		</span>
-	</div>
+<div class="wrap-input100 validate-input" data-validate="Password is required">
+	{{ form.password.errors }}
+	<input class="input100" id="{{ form.password.id_for_label }}" type="password" name="{{ form.password.html_name }}"
+	 placeholder="Password">
+	<span class="focus-input100"></span>
+	<span class="symbol-input100">
+		<i class="fa fa-lock" aria-hidden="true"></i>
+	</span>
+</div>
 
-	<div class="text-left fs-13 p-t-5 text-white">
-		<input type="checkbox">
-		Remember me
-		<span class="checkmark"></span>
-	</div>
+<div class="text-left fs-13 p-t-5 text-white">
+	<input type="checkbox">
+	Remember me
+	<span class="checkmark"></span>
+</div>
 
-	<div class="container-login100-form-btn">
-		<button class="login100-form-btn" type = "submit">
-			Login
-		</button>
-	</div>
+<div class="container-login100-form-btn">
+	<button class="login100-form-btn" type="submit">
+		Login
+	</button>
+</div>
 
-	<div class="text-center p-t-12">
-		<a class="txt1" href="{% url 'reset' %}">
-			Forgot Username/Password
-		</a>
-		<a class="txt2" href="/accounts/register">
-			Register
-		</a>
-		<a class="login100-form-btn" href="/">
-			Go to Map
-		</a>
-	</div>
+<div class="text-center p-t-12">
+	<a class="txt1" href="{% url 'reset' %}">
+		Forgot Username/Password
+	</a>
+	<a class="txt2" href="/accounts/register">
+		Register
+	</a>
+	<a class="login100-form-btn" href="/">
+		Go to Map
+	</a>
+</div>
 {% endblock %}
