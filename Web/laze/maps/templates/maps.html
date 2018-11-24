@@ -90,6 +90,7 @@
                 </form>
             </div>
 
+            {% if search_text %}
             {% block search_results_area %}
             {% for search_result in search_results %}
             <div class="menu-group-item v-center">
@@ -104,6 +105,7 @@
             </div>
             {% endfor %}
             {% endblock %}
+            {% endif %}
 
             {% if search_text %}
             <div class="menu-inner-wrapper menu-scroll" hidden="True">
