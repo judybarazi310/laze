@@ -47,6 +47,18 @@ html, body {
     position: relative;
     padding: 32px;
     max-height: calc(100vh - 3rem);
+    max-width: min-content;
+}
+
+.map-userbtn{
+    padding: 8px 30px !important;
+    width: 120px;
+}
+
+.userbtn-container{
+    padding: 0px 15px 0 15px !important;
+    margin: auto;
+    margin-bottom: 16px;
 }
 
 .search-bar-wrapper {
