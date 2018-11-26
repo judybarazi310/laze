@@ -2,7 +2,7 @@
 
 {% block info %}
 <div style="color: red;">{{ form.non_field_errors }}</div>
-<div style="color: red;" class="text-center" id="checkPassMatch"></div>
+<div style="color:rgb(185, 25, 25)" class="text-center" id="checkPassMatch"></div>
 
 <br>
 
@@ -36,7 +36,7 @@
 </div>
 
 <div class="wrap-input100 validate-input" data-validate="Password is required">
-	<p>{{ form.password2.errors }}</p>
+
 	<input class="input100" id="{{ form.password2.id_for_label }}" type="password" name="{{ form.password2.html_name }}"
 	 placeholder="Confirm password" onchange="passMatch();">
 	<span class="focus-input100"></span>
@@ -44,7 +44,7 @@
 		<i class="fa fa-lock" aria-hidden="true"></i>
 	</span>
 </div>
-
+{{ form.password2.errors }}
 <div class="text-left fs-13 p-t-5 text-white">
 	<input type="checkbox" onclick="showPass();"> Show password
 </div>
