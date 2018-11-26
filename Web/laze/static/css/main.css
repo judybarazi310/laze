@@ -158,6 +158,17 @@ iframe {
   color: #fff;
 }
 
+.text-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-text {
+  font-family: Varela-Round;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #fff;
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/

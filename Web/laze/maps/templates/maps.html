@@ -80,13 +80,27 @@
             <div class="menu-group-header userbtn-container">
                         {% if user.is_authenticated %}
                         <a class="map-userbtn button button-white" href="#">
-                            <i class="fa fa-user" aria-hidden="true" style="margin: 2px;"></i>
-                            {{ user.username }}
+                            <div class="text-center w-100">
+                                <i class="fa fa-user" aria-hidden="true" style="margin: 2px;"></i>
+                                {{ user.username }}
+                            </div>
                         </a>
-                        <a class="map-userbtn button button-white" href="/accounts/logout">Logout</a>
+                        <a class="map-userbtn button button-white" href="/accounts/logout">
+                            <div class="text-center w-100">
+                                Logout
+                            </div>
+                        </a>
                         {% else %}
-                        <a class="map-userbtn button button-white" href="/accounts/login">Login</a>
-                        <a class="map-userbtn button button-white" href="/accounts/register">Register</a>
+                        <a class="map-userbtn button button-white" href="/accounts/login">
+                            <div class="text-center w-100">
+                                Login
+                            </div>
+                        </a>
+                        <a class="map-userbtn button button-white" href="/accounts/register">
+                            <div class="text-center w-100">
+                                Register
+                            </div>
+                        </a>
                         {% endif %}
                 </div>
             <div class="search-bar-wrapper v-center">

@@ -51,7 +51,7 @@ html, body {
 }
 
 .map-userbtn{
-    padding: 8px 30px !important;
+    padding: 8px 0px !important;
     width: 120px;
 }
 
@@ -195,9 +195,8 @@ html, body {
 }
 
 .menu-inner-wrapper {
-    max-height: calc(100vh - 3rem - 120px);
+    max-height: calc(100vh - 3rem - 176px);
     padding: 0 16px 24px 16px;
-    
 }
 
 .empty-input-field {
