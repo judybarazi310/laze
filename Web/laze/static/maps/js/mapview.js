@@ -35,6 +35,13 @@ function initMap() {
     var wlu = {lat: 43.4735, lng: -80.5273};
     var tims = {lat: 43.4732, lng: -80.5255};
     var subway = {lat: 43.4727, lng: -80.5265};
+
+    // https://developers.google.com/maps/documentation/javascript/style-reference
+    var style= [
+        {featureType: 'all', elementType: 'all', stylers: [{saturation: -100}]},
+        {featureType: 'all', elementType: 'labels.icon', stylers: [{visibility: 'off'}]},
+        {featureType: 'poi', elementType: 'labels.text', stylers: [{visibility: 'off'}]}
+    ];
     
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -45,7 +52,8 @@ function initMap() {
         streetViewControl: false,
         fullscreenControl: false,
         mapTypeControl: false,
-        zoomControl: true
+        zoomControl: true,
+        styles: style
     });
 
     // createPin("Tim Hortons", "text", "TESTING", tims, map);
