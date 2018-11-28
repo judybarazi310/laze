@@ -253,3 +253,13 @@ html, body {
 .right-arrow-display {
     display: inline-block !important;
 }
+
+@media (max-width: 576px) {
+
+    .menu-wrapper {
+        display: none;
+    }
+    #arrowbtn-right {
+        display: inline-block !important;
+    }
+  }
