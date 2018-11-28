@@ -55,6 +55,10 @@ html, body {
     width: 120px;
 }
 
+.map-arrowbtn{
+    padding: 8px !important;
+}
+
 .userbtn-container{
     padding: 0px 15px 0 15px !important;
     margin: auto;
@@ -244,4 +248,8 @@ html, body {
     background-color: #f2f2f2;
     color: #272727;
     text-decoration: none
+}
+
+.right-arrow-display {
+    display: inline-block !important;
 }

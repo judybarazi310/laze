@@ -19,6 +19,11 @@ function createMenuGroupListeners(){
     $(".menu-group-header").each((i, obj) => {
         $(obj).click(toggleMenuGroup);
     });
+    //toggle menu visibility, toggle right arrow visibility
+    $(".map-arrowbtn").click( ()=> {
+        $(".menu-wrapper").toggle(100);
+        $("#arrowbtn-right").toggleClass('right-arrow-display');
+    })
 }
 
 function initMap() {

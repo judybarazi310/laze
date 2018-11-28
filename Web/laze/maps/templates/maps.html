@@ -75,9 +75,20 @@
         <div id="map"></div>
     </div>
 
+    <a class="map-arrowbtn button button-white" id="arrowbtn-right" style="left: 0; top: 52px; display:none;" href="#">
+            <div class="text-center w-100">
+                <i class="fa fa-arrow-right" aria-hidden="true" style="margin: 2px;"></i>
+            </div>
+    </a>
+
     <div class="menu-wrapper">
         <div class="menu-container ml-4 my-4">
             <div class="menu-group-header userbtn-container">
+                        <a class="map-arrowbtn button button-white" href="#">
+                                <div class="text-center w-100">
+                                    <i class="fa fa-arrow-left" aria-hidden="true" style="margin: 2px;"></i>
+                                </div>
+                        </a>
                         {% if user.is_authenticated %}
                         <a class="map-userbtn button button-white" href="#">
                             <div class="text-center w-100">
