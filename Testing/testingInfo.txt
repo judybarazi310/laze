@@ -1,0 +1,6 @@
+The plan for testing at the moment is to do user testing at first.
+This will include setting up the local host and searching and recording bugs, erors, potential improvements, etc.
+Then more sophisticated testing via methods, use of django resources, or other code.  
+
+Ideally this will be brought up on Wednesday Dec 5 to see how this will pan out.
+Regardless, progress on testing will start the following day of the meeting to create a -somewhat- refined testing log.
