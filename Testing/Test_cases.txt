@@ -5,3 +5,5 @@ Testing Cases:
         -Users must use mylaurier email
         -pasword has to be over 7 characters with no spaces
 -Admins may remove, update, add any pins on the map
+-Ensuring each button works
+-Ensuring that each texfield field works
