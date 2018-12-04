@@ -1,0 +1,7 @@
+Testing Cases:
+
+-Users being able to create and remove their OWN pins but are able to view others pins
+-Creation of an account:
+        -Users must use mylaurier email
+        -pasword has to be over 7 characters with no spaces
+-Admins may remove, update, add any pins on the map
