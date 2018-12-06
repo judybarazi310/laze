@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		table,th,td{
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 10px;
+	}
+	th{
+		text-align:center;
+		background-color:yellow;
+	}
+	</style>
+</head>
+<body>
+	<table>
+		<thead><tr>
+			<th>Rank</th>
+			<th>Requirements</th>
+			<th>Privileges</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Moderator</td>
+				<td>
+				<ul>
+				<li>Profile must be manually reviewed first</li>
+				<li>+1000 or higher points</li>
+				</ul></td>
+				<td><ul><li>Ability to view pins</li>
+				<li>Create unlimited number of pins per day</li>
+				<li>Created pins take priority when pins are created from lower ranks at the same location</li>
+				<li>Upvote or downvote unlimited pins per day</li>
+				<li>View and assess reported pins</li>
+				<li>Delete pins if necessary</li></ul></td>
+			</tr>
+
+			<tr>
+				<td>Regular</td>
+				<td><ul><li>+100 points</li></ul></td>
+				<td><ul>
+				<li>Ability to view pins</li>
+				<li>Create 25 pins per day</li>
+				<li>Created pins take priority when pins are created from lower ranks at the same location</li>
+				<li>Upvote or downvote 100 pins per day</li>
+				<li>Can report pins</li></ul>
+				</td>
+			</tr>
+
+			<tr>
+				<td>Neutral</td>
+				<td><ul>
+				<li>Default rank given at time of account creation</li></ul></td>
+				<td><ul>
+				<li>Ability to view pins</li>
+				<li>Create 5 pins per day</li>
+				<li>Created pins take priority when pins are created from lower ranks at the same location</li>
+				<li>Upvote or downvote 20 pins a day</li>
+				<li>Can report pins</li>
+				</ul></td>
+			</tr>
+
+			<tr>
+				<td>Probation</td>
+				<td><ul>
+				<li>-100 points</li></ul></td>
+				<td><ul>
+				<li>Ability to view pins</li>
+				<li>Create 1 pin per day</li>
+				<li>Cannot report pins</li>
+				</ul></td>
+			</tr>
+
+			<tr>
+				<td>Muted</td>
+				<td><ul>
+				<li>-300 points</li></ul></td>
+				<td><ul>
+				<li>Ability to view pins</li>
+				<li>Cannot create any new pins</li>
+				<li>Cannot report pins</li>
+				</ul></td>
+			</tr>
+
+		</tbody>
+	</table>
+
+	<p>**Each pin begins with a score of 1 point, upvotes from other users add 1 point, downvotes from other users subtracts 1 point, votes from a single person on multiple pins created by the same person can only add/subtract to/from a person’s points at a maximum of 2 a month, this is to deter one person being able to ruin the rank or boost a rank of another
+	</p><p>
+	*If a pin loses priority because of someone with a higher rank creating the same pin with the same info, if the pin earns positive points it goes to the lower rank user, if the pin earns negative points it goes to the higher rank user, this will deter higher ranked users from “stealing” points from lower ranked users
+	</p>
+
+</body>
+</html>
