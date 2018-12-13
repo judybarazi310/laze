@@ -7,3 +7,6 @@ Testing Cases:
 -Admins may remove, update, add any pins on the map
 -Ensuring each button works
 -Ensuring that each texfield field works
+
+
+-while creating pins the category of pin only changes when Info, Food, Parking or Study is choose. It will default to info (category selected when clicked on a pin). 
