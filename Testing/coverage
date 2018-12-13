@@ -1,0 +1,31 @@
+Name                                         Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------
+laze\__init__.py                                 0      0   100%
+laze\settings.py                                27      0   100%
+laze\urls.py                                     5      0   100%
+manage.py                                        9      2    78%   9-10
+maps\__init__.py                                 1      0   100%
+maps\admin.py                                    4      0   100%
+maps\apps.py                                     3      0   100%
+maps\controllers.py                             18     13    28%   7-11, 14-27
+maps\forms.py                                    7      0   100%
+maps\migrations\0001_initial.py                  5      0   100%
+maps\migrations\0002_auto_20181120_1657.py       4      0   100%
+maps\migrations\0003_auto_20181120_1704.py       4      0   100%
+maps\migrations\0004_auto_20181122_2346.py       6      0   100%
+maps\migrations\0005_pin_people_nearby.py        4      0   100%
+maps\migrations\__init__.py                      0      0   100%
+maps\models.py                                  22      2    91%   41, 43
+maps\tests.py                                   25      1    96%   7
+maps\urls.py                                     5      0   100%
+maps\views.py                                   44     24    45%   14-20, 39, 46-48, 51-70
+users\__init__.py                                0      0   100%
+users\admin.py                                   1      0   100%
+users\forms.py                                   8      0   100%
+users\migrations\__init__.py                     0      0   100%
+users\models.py                                  1      0   100%
+users\tests.py                                   1      0   100%
+users\urls.py                                    5      0   100%
+users\views.py                                  23     15    35%   7-21, 25-30
+--------------------------------------------------------------------------
+TOTAL                                          232     57    75%
