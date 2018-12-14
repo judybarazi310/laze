@@ -1,7 +1,10 @@
 
 ## This is a tutorial on how to setup your virtual environment and to view your project locally. Although this is long, the steps to view the current project should be very clear. At the end, I provide an example using my folder structure. Please message Anthony Sukadil or anyone from backend on Slack if you are struggling with setting this up. ##
+
+
 ----------------------------------------------------------------------------------
 #### 1. Install the latest version of Python, Python 3.7.1 at https://www.python.org/downloads/release/python-371/ ####
+#### *IMPORTANT: When installing python, check off "add python to environment variables" so you can have access to python and pip commands. If you forget or if you come to issues with "command not found", you can do this manually by adding the installation directory to your environment variables, then restarting your computer.*
 #### 2. I use Git Bash, so for this tutorial, install Git Bash at https://git-scm.com/downloads
 #### 3. Open Git Bash and type in the following command:
     pip install virtualenv
@@ -13,7 +16,7 @@
     source venv-laze/Scripts/activate
 #### 6a. You can check if you're in your virtual environment by calling the command: ####
     python -m pip list
-### and noting that the only packages installed are pip 10.0.1 and setuptools 39.0.1
+#### and noting that the only packages installed are pip 10.0.1 and setuptools 39.0.1
     Package    Version
     ---------- -------
     pip        10.0.1
@@ -25,10 +28,10 @@
     pip install django==2.1.2
 #### Again, check using step 6a and you should see Django installed.
 #### 8. From here, go to the directory where the project exists: ####
-    cd directory/where/you/pulled/laze/Web/laze
+    cd directory/where/you/pulled/or/cloned/laze/Web/laze
 #### 9. Run the command: ####
     python manage.py runserver 
-#### 10. You'll see in your terminal the following message: ####
+#### 10. You should see in your terminal the following message (sometimes it doesn't show up on startup, not an issue): ####
 
 	Performing system checks...
 
