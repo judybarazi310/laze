@@ -170,7 +170,7 @@
                                     {{ food_pin.title }}
                                 </div>
                                 <!-- TODO Design the view when a user clicks a pin, show more information like google maps -->
-                                {% if request.user.is_superuser %}
+                                {% if request.user.is_superuser or food_pin.created_by == request.user %}
                                 <a class="button button-white" href="{% url 'maps:delete_pin' food_pin.id %}">Delete</a>
                                 {% endif %}
                             </div>
@@ -196,10 +196,10 @@
                                     <!-- TODO make the icons change automatically based on the category of the pin-->
                                 </div>
                                 <div>
-                                    {{ study_pin.title }}
+                                    {{ study_pin.title }}   
                                 </div>
                                 <!-- TODO Format button alignment, design the view when a user clicks a pin, show more information like google maps -->
-                                {% if request.user.is_superuser %}
+                                {% if request.user.is_superuser or study_pin.created_by == request.user %}
                                 <a class="button button-white" href="{% url 'maps:delete_pin' study_pin.id %}">Delete</a>
                                 {% endif %}
                             </div>
@@ -228,7 +228,7 @@
                                     {{ parking_pin.title }}
                                 </div>
                                 <!-- TODO Format button alignment, design the view when a user clicks a pin, show more information like google maps -->
-                                {% if request.user.is_superuser %}
+                                {% if request.user.is_superuser or parking_pin.created_by == request.user %}
                                 <a class="button button-white" href="{% url 'maps:delete_pin' parking_pin.id %}">Delete</a>
                                 {% endif %}
                             </div>
@@ -256,7 +256,7 @@
                                     {{ info_pin.title }}
                                 </div>
                                 <!-- TODO Format button alignment, design the view when a user clicks a pin, show more information like google maps -->
-                                {% if request.user.is_superuser %}
+                                {% if request.user.is_superuser or parking_pin.created_by == request.user %}
                                 <a class="button button-white" href="{% url 'maps:delete_pin' info_pin.id %}">Delete</a>
                                 {% endif %}
                             </div>
