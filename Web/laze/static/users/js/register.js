@@ -19,7 +19,7 @@ function passMatch() {
     var pass = $("#id_password1").val();
     var confirmPass = $("#id_password2").val();
 
-    if (pass !== confirmPass) {
+    if (confirmPass !== "" && pass !== confirmPass) {
         $("#checkPassMatch").html("Passwords do not match");
     } else {
         $("#checkPassMatch").html("");

@@ -56,9 +56,6 @@ function initMap() {
         styles: style
     });
 
-    // createPin("Tim Hortons", "text", "TESTING", tims, map);
-    // createPin("Subway Bricker", "text", "TESTING", subway, map);
-
     let overlay = setOverlay(map);
     addOverlayClickListener(map, overlay);
     google.maps.event.addListener(map, 'dragend', function() {
@@ -78,10 +75,6 @@ function initMap() {
 
      map.setCenter(new google.maps.LatLng(y, x));
     });
-    // TODO: define minZoomLevel
-    // google.maps.event.addListener(map, 'zoom_changed', function() {
-    //     if (map.getZoom() < minZoomLevel) map.setZoom(minZoomLevel);
-    // });
     
     //create pins from server data
     var i;

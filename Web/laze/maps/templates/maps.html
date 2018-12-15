@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="{% static 'images/icons/Map Pin Icon.png' %}" />
     <!--===============================================================================================-->
@@ -21,7 +20,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'maps/vendor/select2/select2.min.css' %}">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
-    <!-- <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}"> -->
     <!-- mapview css: -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/mapview.css' %}">
     <!--===============================================================================================-->
@@ -256,7 +254,7 @@
                                     {{ info_pin.title }}
                                 </div>
                                 <!-- TODO Format button alignment, design the view when a user clicks a pin, show more information like google maps -->
-                                {% if request.user.is_superuser or parking_pin.created_by == request.user %}
+                                {% if request.user.is_superuser or info_pin.created_by == request.user %}
                                 <a class="button button-white" href="{% url 'maps:delete_pin' info_pin.id %}">Delete</a>
                                 {% endif %}
                             </div>
