@@ -7,9 +7,7 @@ from .controllers import calculate_nearby
 from django.http import HttpResponse
 
 
-# Create your views here.
-
-def maps_view(request, **kwargs):  # TODO create food_pin_list
+def maps_view(request, **kwargs):  
     if request.method == 'POST' and request.user.is_authenticated:
         form = PinForm(request.POST)
 

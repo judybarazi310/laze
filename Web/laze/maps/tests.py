@@ -1,7 +1,7 @@
 from django.test import TestCase
 from .forms import PinForm
 
-# Create your tests here.
+
 class Setup_Class(TestCase):
     def setUp(self):
         self.Pin = Pin.objects.create(title = "Cubical", 
