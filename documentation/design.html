@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
+<html lang="en-ca">
+    <head>
+        <h1><strong>Laze: Design<strong></h1>
+		<style>
     table,th,td{
       border: 1px solid black;
       border-collapse: collapse;
@@ -12,79 +12,57 @@
       background-color: yellow;
     }
   </style>
-</head>
+    </head>
+	<body> 
+        <h1><strong>Table of Contents</strong></h1>
+		<ul>
+            <li style="font-weight: 400;"><span style="font-weight: 400;"><a href = "#introduction">1. Introduction</a></span></li>
+            <ul>
+                <li style="font-weight: 400;"><span style="font-weight: 400;"><a href = "#purpose">1.1 Purpose</a></span></strong></li>
+                <li style="font-weight: 400;"><span style="font-weight: 400;"><a href = "#scope">1.2 Scope</a></span></li>
+                <li style="font-weight: 400;"><span style="font-weight: 400;"><a href = "#references">1.3 References</a></span></li>
+				<li style="font-weight: 400;"><span style="font-weight: 400;"><a href = "#overview">1.4 Overview</a></span></li>
+            </ul>
+            <li style="font-weight: 400;"><span style="font-weight: 400;"><a href = "#interface-description">2. Interface Description</a></span></li>
+            <ul>
+                <li style="font-weight: 400;"><span style="font-weight: 400;"><a href = "#module-intreface">2.1 Module Interface</a></span></li>
+            </ul>
+            <li style="font-weight: 400;"><span style="font-weight: 400;"><a href = "#detailed-design">3. Detailed Design</a></span></li>
+            <ul>
+                <li style="font-weight: 400;"><span style="font-weight: 400;"><a href = "#module-detailed-design">3.1 Module Detailed Design</a></span></li>
+                <li style="font-weight: 400;"><span style="font-weight: 400;"><a href = "#module-decomposition">3.2 Module Decomposition</a></span></li>
+				<li style="font-weight: 400;"><span style="font-weight: 400;"><a href = "#coding-documentation">3.3 Coding Standards &amp; Documentation</a></span></li>
+            </ul>
+                <li style="font-weight: 400;"><span style="font-weight: 400;"><a href = "#versions">4. Versions</a></span></li>
+            
+        </ul>
+		<br>
+        <h1><strong><a name="introduction">1. Introduction</a></strong></h1>
+        <h2><strong><a name="purpose">1.1 Purpose</a></strong></h2>
+		<p><span style="font-weight: 400;">This software design document states how the requirements will be achieved by describing the architecture and system design of the Laze web application. This document will provide descriptions of how each module will work including their associated methods and attributes.</span></p>
+        <h2><strong><a name="scope">1.2 Scope</a></strong></h2>
+		<p><span style="font-weight: 400;">The scope of this project is to continuously provide live updating information for users around Wilfrid Laurier campus. Users will have the ability to set up their own data points as well as gain information from other user data points around them.</span></p>
+        <h2><strong><a name="references">1.3 References</a></strong></h2>
+		<p><span style="font-weight: 400;">IEEE. IEEE Std 1016-1998 IEEE Recommended Practice for Software Design Descriptions. IEEE Computer Society, 1998</span></p>
+		<p><span style="font-weight: 400;">CS312 - Sofware Engineering. <a href="http://dos.iitm.ac.in/OOSD_Material/CaseStudies/CaseStudy3/SDD/Karthik_DD.html" >Sofware Design Document for Electronic Scrolling Displays</a>. TGR Karthik, 2006</span></p>
+        <h2><strong><a name="overview">1.4 Overview</a></strong></h2>
+		<p><span style="font-weight: 400;">This document is written following the guidelines of the IEEE Recommended Practice for Software Design Descriptions. It outlines the module, process, and data dependencies, as well as their detailed design and decomposition.</span></p>
+
+</html
 
 
-<h1 dir="ltr" >Laze</h1>
-
-<h2 dir="ltr" >Table of Contents</h2>
-
-<ol ><li><p>Introduction</p>
-
-</li>
-<ol ><li><p>Purpose</p>
-
-</li>
-<li><p>Scope</p>
-
-</li>
-<li><p>References</p>
-
-</li>
-<li><p>Overview</p>
-
-</li>
-</ol><li><p>Interface Description</p>
-
-</li>
-<ol ><li><p>Module Interface</p>
-
-</li>
-</ol><li><p>Detailed Design</p>
-
-</li>
-<ol ><li><p>Module Detailed Design</p>
-
-</li>
-<li><p>Coding Standards</p>
-
-</li>
-<li><p>Documentation</p>
-
-</li>
-</ol><li><p>Versions</p>
-
-</li>
 </ol><br />
-<h2 dir="ltr" >Introduction</h2>
-
-<h3 dir="ltr" >Purpose</h3>
-
-<p>This software design document states how the requirements will be achieved by describing the architecture and system design of the Laze web application. This document will provide descriptions of how each module will work including their associated methods and attributes. </p>
-
-<h3 dir="ltr" >Product Scope</h3>
-
-<p>The scope of this project is to continuously provide live updating information for users around Wilfrid Laurier campus. Users will have the ability to set up their own data points as well as gain information from other user data points around them. </p>
-
-<h3 dir="ltr" >References</h3>
-
-<p>IEEE Std 1016-1998 IEEE Recommended Practice for Software Design Descriptions. IEEE Computer Society, 1998</p>
-
-<p>CS312 - Software Engineering. <a href="http://dos.iitm.ac.in/OOSD_Material/CaseStudies/CaseStudy3/SDD/Karthik_DD.html" >Software Design Document for Electronic Scrolling Displays</a>. TGR Karthik, 2006</p>
-
-<h3 dir="ltr" >Overview</h3>
-
-<p>This document is written following the guidelines of the IEEE Recommended Practice for Software Design Descriptions. It outlines the module, process, and data dependencies, as well as their detailed design and decomposition.</p>
 
 <h1 dir="ltr" > </h1>
 
 <h1 dir="ltr" > </h1>
 
-<h1 dir="ltr" >2. Interface Description</h1>
+<h1 dir="ltr" ><a name="interface-description">2. Interface Description</h1>
 
-<h2 dir="ltr" >2.1 Module Interface</h2>
+<h2 dir="ltr" ><a name="module-intreface">2.1 Module Interface</h2>
 
 <h3 dir="ltr" >2.1.1 LoginView</h3>
+<img src="https://raw.githubusercontent.com/lauriercp317/laze/master/graphics/Log%20In%20Page%20Web%20Design.png"width="600" height="400"><br>
 
 <br />
 <table >
@@ -141,8 +119,9 @@
 </table>
 
 <br />
-<h3 dir="ltr" >2.1.1.1 RegistrationView</h3>
 
+<h3 dir="ltr" >2.1.1.1 RegistrationView</h3>
+<img src="https://raw.githubusercontent.com/lauriercp317/laze/master/graphics/Registration%20Web%20Page.png"width="600" height="400"><br>
 <br />
 <table >
 <thead>
@@ -213,7 +192,6 @@
 
 <br />
 <h3 dir="ltr" >2.1.1.2 ForgotPasswordView</h3>
-
 <br />
 <table ><thead>
 <tr>
@@ -247,6 +225,7 @@
 
 <br />
 <h3 dir="ltr" >2.1.2 MainView</h3>
+<img src="https://raw.githubusercontent.com/lauriercp317/laze/master/graphics/Main%20Page%20Web%20Design.png"width="600" height="400"><br>
 
 <br />
 <br />
@@ -364,9 +343,9 @@
 
 <br />
 <br />
-<h1 dir="ltr" >3. Detailed Design &amp; Decomposition </h1>
+<h1 dir="ltr" ><a name="detailed-design">3. Detailed Design &amp; Decomposition </h1>
 
-<h2 dir="ltr" >3.1 Module Detailed Design</h2>
+<h2 dir="ltr" ><a name="module-detailed-design">3.1 Module Detailed Design</h2>
 
 <p>3.1.1 Login View, RegistrationView, &amp; ForgotPasswordView</p>
 
@@ -411,8 +390,6 @@
 
 </tbody>
 </table>
-
-<br />
 <br />
 <br />
 <p>3.1.2 MainView (map page) and CreatePinView</p>
@@ -473,151 +450,86 @@
 </table>
 
 <br />
-<h2 dir="ltr" >3.2 Module Decomposition</h2>
+<h2 dir="ltr" ><a name="module-decomposition">3.2 Module Decomposition</h2>
 
 <ul>
-<li><p>Interaction diagrams</p>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Interaction Diagrams</a></span></li>
 
-</li>
 <ul>
-<li><p>Framework Package Interactions</p>
-
-</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Framework Package Interactions</a></span></li>
 </ul>
 
-<li><p>Detailed class diagrams</p>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Detailed Class Diagrams</a></span></li>
 
-</li>
 <ul>
-<li><p>Model Class Diagrams</p>
-
-</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Model Class Diagrams</a></span></li>
 </ul>
 
 </ul>
 
 <br />
-<br />
-<br />
-<h2 dir="ltr" >3.3 Coding Standards &amp; Documentation</h2>
+<h2 dir="ltr" ><a name="coding-documentation">3.3 Coding Standards &amp; Documentation</h2>
 
 <ul>
-<li><p>Development tools</p>
-
-</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Development Tools</a></span></li>
 <ul>
-<li><p>Virtual Environment</p>
-
-</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Virtual Environment</a></span></li>
 </ul>
 
-<li><p>Front end</p>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Front End</a></span></li>
 
-</li>
 <ul>
-<li><p>HTML &amp; CSS</p>
-
-</li>
-<li><p>Bootstrap</p>
-
-</li>
-<li><p>JQuery</p>
-
-</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">HTML &amp; CSS</a></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Bootstrap</a></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">JQuery</a></span></li>
 </ul>
 
-<li><p>Back End</p>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Back End</a></span></li>
 
-</li>
 <ul>
-<li><p>Django==2.1.2 (libraries listed)</p>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Django==2.1.2 (libraries listed)</a></span></li>
 
-</li>
 <ul>
-<li><p>Celery</p>
-
-</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Celery</a></span></li>
 </ul>
 
-<li><p>Python 3</p>
-
-</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Python</a></span></li>
 </ul>
 
-<li><p>Hosting (TBD, options listed)</p>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Hosting (TBD, options listed)</a></span></li>
 
-</li>
 <ul>
-<li><p>Google</p>
-
-</li>
-<li><p>Github pages</p>
-
-</li>
-<li><p>DigitalOcean</p>
-
-</li>
-<li><p>Python Anywhere</p>
-
-</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Google</a></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">GitHub Pages</a></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">DigitalOcean</a></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Python Anywhere</a></span></li>
 </ul>
 
-<li><p>Email System (TBD, options listed)</p>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Email System (TBD, options listed)</a></span></li>
 
-</li>
 <ul>
-<li><p>Mailchimp</p>
-
-</li>
-<li><p>Django</p>
-
-</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Mailchimp</a></span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Django</a></span></li>
+</ul>
 </ul>
 
-</ul>
-
-<br />
-<br />
-<br />
-<h1 dir="ltr" >4. Versions</h1>
+<h1 dir="ltr" ><a name="versions">4. Versions</h1>
 
 <h3 dir="ltr" >Version 1.0 - 2018/11/04</h3>
 
-<br />
-<p>Created the document</p>
-
+<i>Created the document</i>
+	
 <ul>
-<li><p>Marek Szymczyk</p>
-
-</li>
-<li><p>Mansi Bhatia</p>
-
-</li>
-<li><p>Max Niebergall</p>
-
-</li>
+	<li>Marek Szymczyk</li>
+	<li>Mansi Bhatia</li>
+	<li>Max Niebergall</li>
 </ul>
-
-<br />
 
 <h3 dir="ltr" >Version 1.1 - 2018/11/20</h3>
 
-<br />
-<p>Edited the document</p>
+<i>Editted the document</i>
 
 <ul>
-<li><p>Zizheng Huang</p>
-<li><p>Tayania Siwek-Smith</p></li>
+	<li>Zizheng Huang</li>
+	<li>Tayania Siwek-Smith</li>
 </ul>
-<br />
-
-<h3 dir="ltr" >Version 1.2 - 2018/12/15</h3>
-<br />
-
-<p>Final SQA</p>
-
-<ul>
-<li><p>Marko Ty</p></li>
-<li>Marek Szymczyk</li>
-</ul>
-<br />
