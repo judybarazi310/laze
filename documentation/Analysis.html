@@ -1,3 +1,5 @@
+<h1><strong>Laze: Analysis<strong></h1>
+
 <h2><b>Table of Contents</b></h2>
 <ul>
 <li style="font-weight: 400;"><span style="font-weight: 400;"><a href="#intro">1. Introduction</a></span></li>
@@ -25,38 +27,38 @@
 </ul>
 <h2><a name="intro"><b>1. Introduction</b></a></h2>
 <h3><a name="PO"><b>1.1 Project overview</b></a></h3>
-<p><span style="font-weight: 400;">Laze is an application containing a live and dynamic GPS map overview of Wilfrid Laurier University. It allows users to pin points of interest, such as study spaces, restaurant lines, parking spots, etc - all of which will be visible to all other users of the application. These pins enable users to view indicated information such as the length of a line or the availability of a parking spot nearby. Users have the ability to support the validity of an active pin or flag to decrease its time before expiry. </span></p>
+<p><span style="font-weight: 400;">Laze is an application containing a live and dynamic GPS map overview of Wilfrid Laurier University's Waterloo campus. It allows users to pin points of interest, such as study spaces, restaurant lines, parking spots, etc - all of which will be visible to all other users of the application. These pins enable users to view information such as the length of a line or the availability of a parking spot nearby. Users have the ability to support the validity of an active pin or flag to decrease its time before expiry. </span></p>
 <h3><a name="purpose"><b>1.2 Purpose</b></a></h3>
 <p><span style="font-weight: 400;">This document shows how the objects in our program interact with each other as well as each entity object&rsquo;s listed attributes. This document also serves as a framework for our development team to use when creating objects and classes. &nbsp;</span></p>
 <h2><a name="oClassification"><b>2. Object Classification</b></a></h2>
 <h3><a name="EntityObjects"><b>2.1 Entity Objects</b></a></h3>
 <ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Administrator-A user from the Laze application, may suspend users, Delete pins and create permanent pins.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Guest-A user of the Laze Application that may see the map and pins</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Map-A Visual aid letting Admin, user and guest see where pins ad locations are.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Pins-An object used to describe and rate a certain area/location</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">User-A user from the Laze application</span></li>
+<li>Administrator: <span style="font-weight: 400;">a user from the Laze application, may suspend users, delete pins and create permanent pins.</span></li>
+<li>Guest: <span style="font-weight: 400;">a user of the Laze Application that may see the map and pins</span></li>
+<li>Map: <span style="font-weight: 400;">a visual aid that lets the administrator, user and guest see where pins and locations are.</span></li>
+<li>Pins: <span style="font-weight: 400;">an object used to describe and rate a certain area/location</span></li>
+<li>User: <span style="font-weight: 400;">a user of the Laze application</span></li>
 </ul>
 <h3><a name="boundaryo"><b>2.2 Boundary Objects</b></a></h3>
 <ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Feed Post View-Where the user can go to update the feed</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Feed View-Where the user can go to see populated and unpopulated areas</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Keyword Search View-Where the user can go to type in a location</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Pin Create View-Where the user can go to create a new pin</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Pin Description View-Where a user can place a description of the pin</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Private Task View-Where an admin can perform private tasks</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Profile Edit View-Where the user can go to change their username or Profile Photo</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Rate Pin View-Where a user rates their pin on a setting</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Setting View-Where a Admin selects where they are on the map</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">User Login View-Where the user can login into their account</span></li>
+<li>Feed Post View: <span style="font-weight: 400;">where the user can go to update the feed</span></li>
+<li>Feed View: <span style="font-weight: 400;">where the user can go to see populated and unpopulated areas</span></li>
+<li>Keyword Search View: <span style="font-weight: 400;">where the user can go to type in a location</span></li>
+<li>Pin Create View: <span style="font-weight: 400;">where the user can go to create a new pin</span></li>
+<li>Pin Description View: <span style="font-weight: 400;">where a user can place a description of the pin</span></li>
+<li>Private Task View: <span style="font-weight: 400;">where an admin can perform private tasks</span></li>
+<li>Profile Edit View: <span style="font-weight: 400;">where the user can go to change their username or profile photo</span></li>
+<li>Rate Pin View: <span style="font-weight: 400;">where a user rates their pin on a setting</span></li>
+<li>Setting View: <span style="font-weight: 400;">where an administrator selects where they are on the map</span></li>
+<li>User Login View: <span style="font-weight: 400;">where the user can login into their account</span></li>
 </ul>
 <h3><a name= "controlO"><b>2.3 Control Objects</b></a></h3>
 <ul>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Admin Controller-Controls all matters related to admin data</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Map Controller-Controls all matters involving the overall map</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Pin Controller-Controls and stores all data related to pins</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Search Controller-Controls all matters related to searching for pins and location</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">User Controller-Controls all matters related to User Data</span></li>
+<li>Admin Controller: <span style="font-weight: 400;">controls all matters related to administrator data</span></li>
+<li>Map Controller: <span style="font-weight: 400;">controls all matters involving the overall map</span></li>
+<li>Pin Controller: <span style="font-weight: 400;">controls and stores all data related to pins</span></li>
+<li>Search Controller: <span style="font-weight: 400;">controls all matters related to searching for pins and location</span></li>
+<li>User Controller: <span style="font-weight: 400;">controls all matters related to user data</span></li>
 </ul>
 <h2><a name= "diagram"><b>3. Diagrams</b></a></h2>
 <h3><a name= "BCEDiagram"><b>3.1 Boundary/Control/Entity Diagram</b></a></h3>
@@ -68,6 +70,7 @@
 
 <h2><a name="versions"><b>4. Versions</b></a></h2>
 <h3>Version 1.0 - 2018/10/14</h3>
+<span style="font-weight: 400;">
 <i>Created the document</i>
 <ul>
 	<li>Ashaab Khan</li>
@@ -77,19 +80,27 @@
 	<li>Mansi Bhatia</li>
 	<li>Sakshi Joshi</li>
 </ul>
+</span>
 <h3>Version 1.1 - 2018/10/15</h3>
+<span style="font-weight: 400;">
 <i>Updated versions </i>
 <ul>
 	<li>Binoli Joshi</li>
 	<li>Katie Milligan</li>
 </ul>
+</span>
 <h3>Version 1.2 - 2018/12/9</h3>
+<span style="font-weight: 400;">
 <i>Updated links and diagrams </i>
 <ul>
 	<li>Katie Milligan</li>
 </ul>
+</span>
 <h3>Version 1.3 - 2018/12/15</h3>
+<span style="font-weight: 400;">
 <i>Final SQA</i>
 <ul>
 	<li>Marek Szymczyk</li>
+	<li>Binoli Joshi</li>
 </ul>
+</span>
