@@ -1,1 +1,9 @@
+Clayton Peterek
+160365760
 
+Tested:
+Login page text fields - all working and taking input
+Login page buttons - all functioning and redirecting to appropriate pages
+Creation of account - account created
+Users are still able to use any email besides Laurier email
+Passwords work - no requirements or minimum for passwords, low security issues could arise
