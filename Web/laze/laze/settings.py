@@ -28,13 +28,6 @@ ALLOWED_HOSTS = []
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Anthony setup a dummy email to use to send emails with
 # otherwise you can use the console and email information will be sent here
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "latestingacc69@gmail.com"
-EMAIL_HOST_PASSWORD = "MyTesting321"
-
 # Application definition
 
 INSTALLED_APPS = [
